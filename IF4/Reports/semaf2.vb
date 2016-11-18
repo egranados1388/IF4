@@ -8,12 +8,12 @@ Public Class semaf2
     ' Adaptador de datos sql  
     Private SqlDataAdapter As SqlDataAdapter
     ' Cadena de conexión  
-    Private Const cs As String = "Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
+    Private Const cs As String = "Data Source=172.16.1.15;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
     ' flag  
     Private bEdit As Boolean
-Shared csd As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+    Shared csd As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.15;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
 
-Shared epicor As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=Epicor905;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+    Shared epicor As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.15;" + "DataBase=E10Cartomicro;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
 
 
 ''// Borra  existencia de  muestras(registros  muestras_t)

@@ -3,7 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 Public Class metodos
 
-    Shared coneccionstring = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=Epicor905;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+    Shared coneccionstring = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.15;" + "DataBase=E10Cartomicro;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
     Shared coneccionstring3 = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
 
     Shared coneccionstring2 = "Initial Catalog=IF4;DATA SOURCE=172.16.1.11;Integrated Security=True"
@@ -34,7 +34,7 @@ Public Class metodos
 
 
 
-   
+
 
 
     ''valida  maquina  correcta  del programa
@@ -78,7 +78,7 @@ Public Class metodos
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
-            conn2.ConnectionString = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=Epicor905;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+            conn2.ConnectionString = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.15;" + "DataBase=E10Cartomicro;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
             'Dim mystring2 As String = "select * from PartLot where LotNum ='" + CStr(lotenum) + "' and PartNum ='" + CStr(parte_lote) + "' and  OnHand=1"
             Dim mystring2 As String = "select * from PartLot,partbin where PartLot.LotNum ='" + CStr(lotenum) + "' and PartLot.PartNum = '" + CStr(parte_lote) + "' and  PartLot.OnHand=1 and  PartLot.LotNum = PartBin.LotNum and PartBin.WarehouseCode = '300'"
 
@@ -127,13 +127,13 @@ Public Class metodos
 
 
             While reader2.Read()
-If (reader2.GetValue(0) Is DBNull.Value) Then
+                If (reader2.GetValue(0) Is DBNull.Value) Then
 
-conta = 0
-Else
+                    conta = 0
+                Else
 
-conta = reader2.GetValue(0)
-End If
+                    conta = reader2.GetValue(0)
+                End If
 
 
 

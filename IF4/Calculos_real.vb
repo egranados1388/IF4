@@ -4,15 +4,15 @@
 Imports System.Data.Odbc ''//Libreria metodos para conexion odbc
 ''Inicio de clase
 Public Class Calculos_real
-''// Cadeba conexion ser-sql.IF4 database
-Shared cs As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+    ''// Cadeba conexion ser-e10.IF4 database
+    Shared cs As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
 
 
 
 
 
-''// Borra  existencia de  muestras(registros  muestras_t)
-Public Shared Function clean_dbayuda() As Integer
+    ''// Borra  existencia de  muestras(registros  muestras_t)
+    Public Shared Function clean_dbayuda() As Integer
 
         Try
 
@@ -40,7 +40,7 @@ Public Shared Function clean_dbayuda() As Integer
 
 
 
-Public Shared Function clean_dbayuda_aux() As Integer
+    Public Shared Function clean_dbayuda_aux() As Integer
 
         Try
 
@@ -73,9 +73,9 @@ Public Shared Function clean_dbayuda_aux() As Integer
 
         ''/// Asignacion de  factores de faluta
         Dim factor As Double
-       ' MessageBox.Show("flauta:" + CStr(flauta))
-       ' MessageBox.Show("Emplamador:" + CStr(empalmador))
-Dim f As String = Trim(flauta)
+        ' MessageBox.Show("flauta:" + CStr(flauta))
+        ' MessageBox.Show("Emplamador:" + CStr(empalmador))
+        Dim f As String = Trim(flauta)
 
 
         If (empalmador = "E1" Or empalmador = "E1") Then
@@ -83,15 +83,15 @@ Dim f As String = Trim(flauta)
             Select Case f
                 Case "C"
                     factor = 1
-                  '  MessageBox.Show("C: fac : " + CStr(factor))
+                    '  MessageBox.Show("C: fac : " + CStr(factor))
 
                 Case "B"
                     factor = 0
-                   ' MessageBox.Show("B: fac : " + CStr(factor))
+                    ' MessageBox.Show("B: fac : " + CStr(factor))
 
                 Case "E"
                     factor = 0
-                   ' MessageBox.Show("e: fac : " + CStr(factor))
+                    ' MessageBox.Show("e: fac : " + CStr(factor))
 
                 Case "CB", "BC"
                     factor = 1
@@ -100,7 +100,7 @@ Dim f As String = Trim(flauta)
                 Case "CE", "EC"
 
                     factor = 1
-                   ' MessageBox.Show("ce: fac : " + CStr(factor))
+                    ' MessageBox.Show("ce: fac : " + CStr(factor))
 
 
 
@@ -111,7 +111,7 @@ Dim f As String = Trim(flauta)
 
 
         If (empalmador = "E2" Or empalmador = "E2") Then
-'MessageBox.Show("2")
+            'MessageBox.Show("2")
             Select Case f
                 Case "C"
                     factor = 1.45
@@ -128,7 +128,7 @@ Dim f As String = Trim(flauta)
                     factor = 1.45
                 Case "CE"
                     factor = 1.45
- Case "EC"
+                Case "EC"
                     factor = 1.45
 
 
@@ -140,7 +140,7 @@ Dim f As String = Trim(flauta)
 
 
         If (empalmador = "E3" Or empalmador = "E3") Then
-'MessageBox.Show("3")
+            'MessageBox.Show("3")
             Select Case flauta
                 Case "C"
                     factor = 0
@@ -157,7 +157,7 @@ Dim f As String = Trim(flauta)
                     factor = 1
                 Case "CE"
                     factor = 1
- Case "EC"
+                Case "EC"
                     factor = 1
 
 
@@ -167,7 +167,7 @@ Dim f As String = Trim(flauta)
         End If
 
         If (empalmador = "E4" Or empalmador = "E4") Then
-'MessageBox.Show("4")
+            'MessageBox.Show("4")
             Select Case flauta
                 Case "C"
                     factor = 0
@@ -194,7 +194,7 @@ Dim f As String = Trim(flauta)
         End If
 
         If (empalmador = "E5" Or empalmador = "E5") Then
-'MessageBox.Show("5")
+            'MessageBox.Show("5")
             Select Case f
                 Case "C"
                     factor = 1
@@ -255,14 +255,14 @@ Dim f As String = Trim(flauta)
         ras = p + 1
         ext2 = parte.Substring(ras, dis)
         Return ext
-       ' MessageBox.Show("ext1 " + CStr(ext))
+        ' MessageBox.Show("ext1 " + CStr(ext))
     End Function
 
 
 
     Public Shared Function get_entrada(ByVal rollo) As Double
         Dim entry As Double
-'MessageBox.Show("Rollo:" + CStr(rollo))
+        'MessageBox.Show("Rollo:" + CStr(rollo))
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
@@ -306,12 +306,12 @@ Dim f As String = Trim(flauta)
             Dim conta As Integer = 0
             While reader2.Read()
 
-                   If reader2.Item("salida").Equals(DBNull.Value) Then
+                If reader2.Item("salida").Equals(DBNull.Value) Then
 
-sal = 0
-Else
-sal = CInt(reader2.Item("salida"))
-                   End If
+                    sal = 0
+                Else
+                    sal = CInt(reader2.Item("salida"))
+                End If
 
 
             End While
@@ -384,71 +384,71 @@ sal = CInt(reader2.Item("salida"))
 
 
     Public Shared Function get_kginicorr(ByVal rollo, ByVal kginici, ByVal parte, ByVal fecha_consumo, ByVal inicio_m, ByVal fin_m, ByVal INDICE) As Double
-'MessageBox.Show(" cons : " + CStr(fecha_consumo) + " inic: " + CStr(inicio_m) + " fin: " + CStr(fin_m))
+        'MessageBox.Show(" cons : " + CStr(fecha_consumo) + " inic: " + CStr(inicio_m) + " fin: " + CStr(fin_m))
 
-'MessageBox.Show("ingresando a  double")
-Dim entry As Double = 0
+        'MessageBox.Show("ingresando a  double")
+        Dim entry As Double = 0
 
-'MessageBox.Show("saliendo")
+        'MessageBox.Show("saliendo")
         Dim suma As Double = 0
         Dim parte_vs As String = ""
         Dim rollo_vs As String = ""
         Dim kgini_vs As Double = 0
-Dim contar = 0
-'MessageBox.Show("1.3")
-If (kginici <> 0) Then
-'MessageBox.Show("1.4")
-        Try
+        Dim contar = 0
+        'MessageBox.Show("1.3")
+        If (kginici <> 0) Then
+            'MessageBox.Show("1.4")
+            Try
 
-            Dim conn2 As OdbcConnection = New OdbcConnection()
-            conn2.ConnectionString = cs
-            'Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  and  Fecha_consumo < '" + CStr(fecha_consumo) + "'    order by Fecha_consumo asc"
-    'Dim mystring2 As String = " select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS  IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "' AND  IND < " + CStr(INDICE) + "    order by Fecha_consumo , Produccion.OT asc"
-Dim mystring2 As String = " select * from muestras_r_v where MrowID <" + CStr(INDICE)
+                Dim conn2 As OdbcConnection = New OdbcConnection()
+                conn2.ConnectionString = cs
+                'Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  and  Fecha_consumo < '" + CStr(fecha_consumo) + "'    order by Fecha_consumo asc"
+                'Dim mystring2 As String = " select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS  IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "' AND  IND < " + CStr(INDICE) + "    order by Fecha_consumo , Produccion.OT asc"
+                Dim mystring2 As String = " select * from muestras_r_v where MrowID <" + CStr(INDICE)
 
-Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
-            conn2.Open()
-'MessageBox.Show("1.5")
-            Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
-            Dim conta As Integer = 0
-Dim INDICE_
-            While reader2.Read()
-'MessageBox.Show("1.5.1")
-parte_vs = reader2.Item(10)
-rollo_vs = reader2.Item(11)
-kgini_vs = reader2.Item(12)
- INDICE_ = reader2.Item(0)
-contar = contar + 1
+                Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
+                conn2.Open()
+                'MessageBox.Show("1.5")
+                Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
+                Dim conta As Integer = 0
+                Dim INDICE_
+                While reader2.Read()
+                    'MessageBox.Show("1.5.1")
+                    parte_vs = reader2.Item(10)
+                    rollo_vs = reader2.Item(11)
+                    kgini_vs = reader2.Item(12)
+                    INDICE_ = reader2.Item(0)
+                    contar = contar + 1
 
-'MessageBox.Show("1.5.2")
-If (parte = parte_vs And rollo = rollo_vs And kginici = kgini_vs) Then
+                    'MessageBox.Show("1.5.2")
+                    If (parte = parte_vs And rollo = rollo_vs And kginici = kgini_vs) Then
 
-suma = suma + CDbl(reader2.Item(12))
+                        suma = suma + CDbl(reader2.Item(12))
 
-End If
-
-
-            End While
-'MessageBox.Show(" registros  anteriores v:" + contar.ToString + "iniciales rec:" + kginici.ToString + " suma  coincidenci:" + suma.ToString)
-            entry = kginici - suma
-
-'MessageBox.Show(" registros  anteriores v:" + contar.ToString + "iniciales rec:" + kginici.ToString + " -  suma  coincidenci:" + suma.ToString + " entry:" + entry.ToString)
+                    End If
 
 
-            reader2.Close()
-            conn2.Close()
+                End While
+                'MessageBox.Show(" registros  anteriores v:" + contar.ToString + "iniciales rec:" + kginici.ToString + " suma  coincidenci:" + suma.ToString)
+                entry = kginici - suma
+
+                'MessageBox.Show(" registros  anteriores v:" + contar.ToString + "iniciales rec:" + kginici.ToString + " -  suma  coincidenci:" + suma.ToString + " entry:" + entry.ToString)
 
 
-        Catch i As Exception
-            MessageBox.Show("kg ini corr - " + i.ToString())
-        End Try
+                reader2.Close()
+                conn2.Close()
 
 
-Else
-entry = kginici
-End If
+            Catch i As Exception
+                MessageBox.Show("kg ini corr - " + i.ToString())
+            End Try
 
-Return entry
+
+        Else
+            entry = kginici
+        End If
+
+        Return entry
 
     End Function
 
@@ -463,64 +463,64 @@ Return entry
         Dim parte_vs As String = ""
         Dim rollo_vs As String = ""
         Dim kgfinal_vs As Double = 0
-Dim contador = 0
-Dim c = 0
+        Dim contador = 0
+        Dim c = 0
 
 
-If (kgfinal <> 0) Then
+        If (kgfinal <> 0) Then
 
-        Try
+            Try
 
-            Dim conn2 As OdbcConnection = New OdbcConnection()
-            conn2.ConnectionString = cs
-            'Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  and  Fecha_consumo < '" + CStr(fecha_consumo) + "'    order by Fecha_consumo asc"
-
-
-
-   ' Dim mystring2 As String = " select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "' AND  IND < " + CStr(INDICE) + "        order by Fecha_consumo , Produccion.OT asc"
-Dim mystring2 As String = " select * from muestras_r_v where MrowID <" + CStr(INDICE)
+                Dim conn2 As OdbcConnection = New OdbcConnection()
+                conn2.ConnectionString = cs
+                'Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  and  Fecha_consumo < '" + CStr(fecha_consumo) + "'    order by Fecha_consumo asc"
 
 
 
-Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
-            conn2.Open()
-            Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
-            Dim conta As Integer = 0
-            While reader2.Read()
-
-parte_vs = reader2.Item(10)
-rollo_vs = reader2.Item(11)
-kgfinal_vs = reader2.Item(13)
-
-
-If (parte = parte_vs And rollo = rollo_vs And kgfinal = kgfinal_vs) Then
-
-suma = suma + CDbl(reader2.Item(13))
-c = c + 1
-End If
-
-contador = contador + 1
-            End While
-'MessageBox.Show("suma:" + CStr(suma) + " indice : " + CStr(INDICE) + " registros antes: " + contador.ToString + " validos  para suma:" + c.ToString)
-            entry = kgfinal - suma
+                ' Dim mystring2 As String = " select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "' AND  IND < " + CStr(INDICE) + "        order by Fecha_consumo , Produccion.OT asc"
+                Dim mystring2 As String = " select * from muestras_r_v where MrowID <" + CStr(INDICE)
 
 
 
-            reader2.Close()
-            conn2.Close()
+                Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
+                conn2.Open()
+                Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
+                Dim conta As Integer = 0
+                While reader2.Read()
+
+                    parte_vs = reader2.Item(10)
+                    rollo_vs = reader2.Item(11)
+                    kgfinal_vs = reader2.Item(13)
 
 
-        Catch i As Exception
-            MessageBox.Show("kg fin corr" + i.ToString())
-        End Try
+                    If (parte = parte_vs And rollo = rollo_vs And kgfinal = kgfinal_vs) Then
+
+                        suma = suma + CDbl(reader2.Item(13))
+                        c = c + 1
+                    End If
+
+                    contador = contador + 1
+                End While
+                'MessageBox.Show("suma:" + CStr(suma) + " indice : " + CStr(INDICE) + " registros antes: " + contador.ToString + " validos  para suma:" + c.ToString)
+                entry = kgfinal - suma
 
 
-Else
-entry = kgfinal
-End If
 
-Return entry
-MessageBox.Show(" suma  indice" + CStr(INDICE) + "  revisar  muestras_r_v")
+                reader2.Close()
+                conn2.Close()
+
+
+            Catch i As Exception
+                MessageBox.Show("kg fin corr" + i.ToString())
+            End Try
+
+
+        Else
+            entry = kgfinal
+        End If
+
+        Return entry
+        MessageBox.Show(" suma  indice" + CStr(INDICE) + "  revisar  muestras_r_v")
 
     End Function
 
@@ -542,31 +542,31 @@ MessageBox.Show(" suma  indice" + CStr(INDICE) + "  revisar  muestras_r_v")
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
-           ' Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  order by Fecha_consumo asc"
-Dim mystring2 As String = " select * from muestras_r_v where MrowID <=" + CStr(INDICE)
+            ' Dim mystring2 As String = "select * FROM Consumos  where   Fecha_consumo between  '" + CStr(inicio_m) + "'    and  '" + CStr(fin_m) + "'  order by Fecha_consumo asc"
+            Dim mystring2 As String = " select * from muestras_r_v where MrowID <=" + CStr(INDICE)
 
- Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
+            Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
             conn2.Open()
             Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
             Dim conta As Integer = 0
             While reader2.Read()
 
-'parte_vs = reader2.Item(6)
-'rollo_vs = reader2.Item(9)
+                'parte_vs = reader2.Item(6)
+                'rollo_vs = reader2.Item(9)
 
 
-parte_vs = reader2.Item(10)
-rollo_vs = reader2.Item(11)
-'kgini_vs = reader2.Item(12)
- 'INDICE_ = reader2.Item(0)
+                parte_vs = reader2.Item(10)
+                rollo_vs = reader2.Item(11)
+                'kgini_vs = reader2.Item(12)
+                'INDICE_ = reader2.Item(0)
 
 
 
-If (parte = parte_vs And rollo = rollo_vs) Then
+                If (parte = parte_vs And rollo = rollo_vs) Then
 
-suma = suma + CDbl(reader2.Item(12))
+                    suma = suma + CDbl(reader2.Item(12))
 
-End If
+                End If
 
 
             End While
@@ -585,7 +585,7 @@ End If
 
 
 
-Return entry
+        Return entry
 
     End Function
 
@@ -605,7 +605,7 @@ Return entry
 
 
 
- Public Shared Function get_mismorollokgfinal(ByVal rollo, ByVal kgfinales) As Integer
+    Public Shared Function get_mismorollokgfinal(ByVal rollo, ByVal kgfinales) As Integer
         Dim entry As Double
 
 
@@ -614,7 +614,7 @@ Return entry
 
 
 
- Try
+        Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
@@ -646,7 +646,7 @@ Return entry
 
 
     Public Shared Function insertar_ayuda_aux(ByVal indice, ByVal inicio, ByVal fin, ByVal fecha_programa, ByVal fecha_consumo, ByVal ot, ByVal ci, ByVal maquina_consumo, ByVal empalmador, ByVal parte, ByVal rollo, ByVal kginiciales, ByVal kgfinales, ByVal calidad_flauta, ByVal longitud_m, ByVal ancho_m, ByVal gramaje, ByVal factor, ByVal kgreque, ByVal kgescaneados, ByVal kgqaporta, ByVal kgdespues, ByVal kgfaltantes, ByVal kginicialescorr, ByVal kgfinalescorregido, ByVal cortes, ByVal ancho, ByVal trim)
-'MessageBox.Show("kginiciales :" + CStr(kginiciales) + " kgfinales" + CStr(kgfinales))
+        'MessageBox.Show("kginiciales :" + CStr(kginiciales) + " kgfinales" + CStr(kgfinales))
 
         Dim sal As Double
         Dim fecha_val As String = Format(Now, "MM/dd/yyyy  HH:mm:ss")
@@ -663,7 +663,7 @@ Return entry
 
             Dim cmd2 As New OdbcCommand
             cmd2.Connection = conn2
-           conn2.Open()
+            conn2.Open()
             cmd2.CommandText = "INSERT INTO muestras_r_v  VALUES " & _
           "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_val + "','" + fecha_prog + "','" + fecha_consu + "','" + ot + "','" + ci + "','" + maquina_consumo + "','" + empalmador + "','" + parte + "','" + rollo + "'," + CStr(kginiciales) + "," + CStr(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CStr(longitud_m) + "," + CStr(ancho_m) + "," + CStr(gramaje) + "," + CStr(factor) + "," + CStr(kgreque) + "," + CStr(kgescaneados) + "" & _
            "," + CStr(kgqaporta) + "," + CStr(kgdespues) + "," + CStr(kgfaltantes) + ",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null" & _
@@ -672,11 +672,11 @@ Return entry
 
 
 
-  'cmd2.CommandText = "INSERT INTO muestras_t  VALUES " & _
-         ' "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_programa + "','" + fecha_consumo + "','" + CStr(ot) + "','" + CStr(ci) + "','" + CStr(maquina_consumo) + "','" + CStr(empalmador) + "','" + CStr(parte) + "','" + CStr(rollo) + "'," + CDbl(kginiciales) + "," + CDbl(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CDbl(longitud_m) + "," + CDbl(ancho_m) + "," + CDbl(gramaje) + "," + CDbl(factor) + "," + CDbl(kgreque) + "," + CDbl(kgescaneados) + "," + CDbl(kgqaporta) + "" & _
-          ' "," + CDbl(kgdespues) + "," + CDbl(kgfaltantes) + ",null,null,null,null,null,null,null,null,null ,null,null,null,null,null,null,null" & _
-          ' ",null,null,null,null,null,null,null,null,null)"
-          '  cmd2.ExecuteNonQuery()
+            'cmd2.CommandText = "INSERT INTO muestras_t  VALUES " & _
+            ' "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_programa + "','" + fecha_consumo + "','" + CStr(ot) + "','" + CStr(ci) + "','" + CStr(maquina_consumo) + "','" + CStr(empalmador) + "','" + CStr(parte) + "','" + CStr(rollo) + "'," + CDbl(kginiciales) + "," + CDbl(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CDbl(longitud_m) + "," + CDbl(ancho_m) + "," + CDbl(gramaje) + "," + CDbl(factor) + "," + CDbl(kgreque) + "," + CDbl(kgescaneados) + "," + CDbl(kgqaporta) + "" & _
+            ' "," + CDbl(kgdespues) + "," + CDbl(kgfaltantes) + ",null,null,null,null,null,null,null,null,null ,null,null,null,null,null,null,null" & _
+            ' ",null,null,null,null,null,null,null,null,null)"
+            '  cmd2.ExecuteNonQuery()
 
 
 
@@ -692,7 +692,7 @@ Return entry
 
 
         Catch a As Exception
-           MessageBox.Show(" Insertar_ayuda  aux" + a.ToString())
+            MessageBox.Show(" Insertar_ayuda  aux" + a.ToString())
         End Try
         Return sal
 
@@ -712,7 +712,7 @@ Return entry
 
 
     Public Shared Function insertar_ayuda(ByVal indice, ByVal inicio, ByVal fin, ByVal fecha_programa, ByVal fecha_consumo, ByVal ot, ByVal ci, ByVal maquina_consumo, ByVal empalmador, ByVal parte, ByVal rollo, ByVal kginiciales, ByVal kgfinales, ByVal calidad_flauta, ByVal longitud_m, ByVal ancho_m, ByVal gramaje, ByVal factor, ByVal kgreque, ByVal kgescaneados, ByVal kgqaporta, ByVal kgdespues, ByVal kgfaltantes, ByVal kginicialescorr, ByVal kgfinalescorregido, ByVal cortes, ByVal ancho, ByVal trim)
-'MessageBox.Show("kginiciales :" + CStr(kginiciales) + " kgfinales" + CStr(kgfinales))
+        'MessageBox.Show("kginiciales :" + CStr(kginiciales) + " kgfinales" + CStr(kgfinales))
 
         Dim sal As Double
         Dim fecha_val As String = Format(Now, "MM/dd/yyyy  HH:mm:ss")
@@ -729,7 +729,7 @@ Return entry
 
             Dim cmd2 As New OdbcCommand
             cmd2.Connection = conn2
-           conn2.Open()
+            conn2.Open()
             cmd2.CommandText = "INSERT INTO muestras_r  VALUES " & _
           "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_val + "','" + fecha_prog + "','" + fecha_consu + "','" + ot + "','" + ci + "','" + maquina_consumo + "','" + empalmador + "','" + parte + "','" + rollo + "'," + CStr(kginiciales) + "," + CStr(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CStr(longitud_m) + "," + CStr(ancho_m) + "," + CStr(gramaje) + "," + CStr(factor) + "," + CStr(kgreque) + "," + CStr(kgescaneados) + "" & _
            "," + CStr(kgqaporta) + "," + CStr(kgdespues) + "," + CStr(kgfaltantes) + ",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null" & _
@@ -738,11 +738,11 @@ Return entry
 
 
 
-  'cmd2.CommandText = "INSERT INTO muestras_t  VALUES " & _
-         ' "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_programa + "','" + fecha_consumo + "','" + CStr(ot) + "','" + CStr(ci) + "','" + CStr(maquina_consumo) + "','" + CStr(empalmador) + "','" + CStr(parte) + "','" + CStr(rollo) + "'," + CDbl(kginiciales) + "," + CDbl(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CDbl(longitud_m) + "," + CDbl(ancho_m) + "," + CDbl(gramaje) + "," + CDbl(factor) + "," + CDbl(kgreque) + "," + CDbl(kgescaneados) + "," + CDbl(kgqaporta) + "" & _
-          ' "," + CDbl(kgdespues) + "," + CDbl(kgfaltantes) + ",null,null,null,null,null,null,null,null,null ,null,null,null,null,null,null,null" & _
-          ' ",null,null,null,null,null,null,null,null,null)"
-          '  cmd2.ExecuteNonQuery()
+            'cmd2.CommandText = "INSERT INTO muestras_t  VALUES " & _
+            ' "(" + CStr(indice) + ",'" + inicio + "','" + fin + "','" + fecha_programa + "','" + fecha_consumo + "','" + CStr(ot) + "','" + CStr(ci) + "','" + CStr(maquina_consumo) + "','" + CStr(empalmador) + "','" + CStr(parte) + "','" + CStr(rollo) + "'," + CDbl(kginiciales) + "," + CDbl(kgfinales) + ",'" + CStr(calidad_flauta) + "'," + CDbl(longitud_m) + "," + CDbl(ancho_m) + "," + CDbl(gramaje) + "," + CDbl(factor) + "," + CDbl(kgreque) + "," + CDbl(kgescaneados) + "," + CDbl(kgqaporta) + "" & _
+            ' "," + CDbl(kgdespues) + "," + CDbl(kgfaltantes) + ",null,null,null,null,null,null,null,null,null ,null,null,null,null,null,null,null" & _
+            ' ",null,null,null,null,null,null,null,null,null)"
+            '  cmd2.ExecuteNonQuery()
 
 
 
@@ -766,28 +766,28 @@ Return entry
 
 
 
-Public Shared Function carga_resultados_aux(ByVal inicio, ByVal fin) As Boolean
+    Public Shared Function carga_resultados_aux(ByVal inicio, ByVal fin) As Boolean
 
         Dim registros_validar As Integer = 0
         Dim indice As Integer = 0 ''//Indice para cada  registro de  muestra
-       ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
+        ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
         '' // Se inicial ciclo de   recorrido para  cada  ingreso de  consumo registrado en orden desc 
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
 
-             inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
-             fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
-              '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
+            inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
+            fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
+            '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
             'Dim mystring2 As String = "	select * FROM Consumos LEFT OUTER JOIN produccion ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_consumo between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo , Produccion.OT asc"
-    'Dim mystring2 As String = "  select * FROM PRODUCCION LEFT OUTER JOIN consumos ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo asc"
-'FINAL
+            'Dim mystring2 As String = "  select * FROM PRODUCCION LEFT OUTER JOIN consumos ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo asc"
+            'FINAL
 
-     'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Fecha_consumo , Produccion.OT asc"
+            'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Fecha_consumo , Produccion.OT asc"
 
- 'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
- Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
+            'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
+            Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
 
 
 
@@ -805,7 +805,7 @@ Public Shared Function carga_resultados_aux(ByVal inicio, ByVal fin) As Boolean
 
 
 
-''// Datos  produccion
+                ''// Datos  produccion
                 Dim ci_instruccioncorrugadora = (reader2.Item(0))
                 Dim calidad = (reader2.Item(1))
                 Dim flauta = (reader2.Item(2))
@@ -813,25 +813,25 @@ Public Shared Function carga_resultados_aux(ByVal inicio, ByVal fin) As Boolean
                 Dim ancho_pedido_mm = (reader2.Item(4)) / 1000
                 Dim no_pedido_ot_p = (reader2.Item(3))
 
-'MessageBox.Show("1")
+                'MessageBox.Show("1")
                 Dim cortes_prod = (reader2.Item(6))
-'MessageBox.Show("2")
+                'MessageBox.Show("2")
 
-'MessageBox.Show(" val:" + reader2.Item(7).ToString)
- Dim ancho_lam_prod
-If (reader2.Item(7)).Equals(DBNull.Value) Then
-ancho_lam_prod = 0
-Else
-ancho_lam_prod = (reader2.Item(7)) / 1000
-End If
+                'MessageBox.Show(" val:" + reader2.Item(7).ToString)
+                Dim ancho_lam_prod
+                If (reader2.Item(7)).Equals(DBNull.Value) Then
+                    ancho_lam_prod = 0
+                Else
+                    ancho_lam_prod = (reader2.Item(7)) / 1000
+                End If
 
-'MessageBox.Show("3")
+                'MessageBox.Show("3")
                 Dim trim = (reader2.Item(8))
                 Dim estado_ci_prod = (reader2.Item(9))
 
 
-'MessageBox.Show("4")
-               ' Dim id_maquina_prod = (reader2.Item(21))
+                'MessageBox.Show("4")
+                ' Dim id_maquina_prod = (reader2.Item(21))
                 Dim fecha_inicio_prod = (reader2.Item(10))
                 Dim fecha_final_prod = (reader2.Item(11))
 
@@ -862,13 +862,13 @@ End If
                 Dim cv1 = (reader2.Item(30))
                 Dim cv2 = (reader2.Item(31))
                 Dim idrow = (reader2.Item(32))
-Dim INDI = (reader2.Item(33))
+                Dim INDI = (reader2.Item(33))
 
 
-'''''''''''''''////////////////////////////////////////////-------------------------------------
+                '''''''''''''''////////////////////////////////////////////-------------------------------------
 
 
-               ' MessageBox.Show("CI consumos:" + CStr(no_ci) + "clave" + CStr(idrow) + " longitud" + CStr(longitud_pedido_mm))
+                ' MessageBox.Show("CI consumos:" + CStr(no_ci) + "clave" + CStr(idrow) + " longitud" + CStr(longitud_pedido_mm))
 
 
 
@@ -891,10 +891,10 @@ Dim INDI = (reader2.Item(33))
 
                 ''-----------------------------------calculo de  kg Kg Teoricos por CI y Empalmador
                 Dim kgreque As Double = ancho * CInt(longitud_pedido_mm) * factor * grama
-               ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
+                ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
 
 
-           ' MessageBox.Show("reque: " + CStr(kgreque))
+                ' MessageBox.Show("reque: " + CStr(kgreque))
 
 
 
@@ -904,96 +904,96 @@ Dim INDI = (reader2.Item(33))
 
 
                 ''// Mismo rollo mismos  kginiciales y finales
-                    Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
-                    Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
+                Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
+                Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
 
 
-''//kginiciales corregido y finales corr
+                ''//kginiciales corregido y finales corr
 
-'MessageBox.Show("Enviando: rollo:" + Rollo.ToString + "    kginiciales:" + kginiciales.ToString + " parte_rollo:" + parte_rollo.ToString + "fecha consumo: " + Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss").ToString + "  inicio : " + inicio.ToString + " fin: " + fin.ToString)
+                'MessageBox.Show("Enviando: rollo:" + Rollo.ToString + "    kginiciales:" + kginiciales.ToString + " parte_rollo:" + parte_rollo.ToString + "fecha consumo: " + Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss").ToString + "  inicio : " + inicio.ToString + " fin: " + fin.ToString)
 
-'Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
-'MessageBox.Show("ok")
+                'Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
+                'MessageBox.Show("ok")
 
-'Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
+                'Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
 
-'MessageBox.Show("2")
-''// BJ Consecutivo aparicion parte-Lote
+                'MessageBox.Show("2")
+                ''// BJ Consecutivo aparicion parte-Lote
 
-Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
+                Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
 
-''// BK Correccion kg  negativos  por  cambio
+                ''// BK Correccion kg  negativos  por  cambio
 
-Dim cor_kgnegativos = 0
+                Dim cor_kgnegativos = 0
 
-If (conse_aparicion = 0 And 0 > 0) Then
+                If (conse_aparicion = 0 And 0 > 0) Then
 
-cor_kgnegativos = 0
+                    cor_kgnegativos = 0
 
-Else
+                Else
 
-cor_kgnegativos = 1
-
-
-End If
+                    cor_kgnegativos = 1
 
 
+                End If
 
 
 
-''// kg escaneados  o consumo bruto AE
+
+
+                ''// kg escaneados  o consumo bruto AE
 
                 ''//Calculo obsoleto
                 Dim entrada As Double = get_entrada(CStr(Rollo))
                 Dim salidas As Double = get_salida(CStr(Rollo))
-               ' Dim kgscan As Double = entrada - salidas
+                ' Dim kgscan As Double = entrada - salidas
 
-''// Nuevo calculo
-'Dim kgscan As Double
-If (0 < 0) Then
+                ''// Nuevo calculo
+                'Dim kgscan As Double
+                If (0 < 0) Then
 
-'kgscan = 0
+                    'kgscan = 0
 
-'Else
+                    'Else
 
-'kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
+                    'kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
 
-End If
-
-
-
-'MessageBox.Show("kg iniciales corr  " + CStr(kginicialescorregido) + "kgfinales corr " + CStr(kgfinalescorregido))
+                End If
 
 
 
-''/// Trashhhhh***********************************************************
+                'MessageBox.Show("kg iniciales corr  " + CStr(kginicialescorregido) + "kgfinales corr " + CStr(kgfinalescorregido))
+
+
+
+                ''/// Trashhhhh***********************************************************
                 ''------------------------------------calculo kg aporta
                 'Dim kgaporta As Double
                 'If (kgreque <= kgscan) Then
                 '    kgaporta = kgreque
-               ' Else
+                ' Else
                 '    kgaporta = kgscan
-               ' End If
+                ' End If
 
                 ''------------------------------------ calculo kg despues  de  escaneo 
-               ' Dim kgdespues As Double = kgscan - kgaporta
+                ' Dim kgdespues As Double = kgscan - kgaporta
 
                 ''------------------------------------ calculo kg  faltantes ci
-               ' Dim kgfalta As Double = kgreque - kgaporta
-''/// Trashhhh_________________________________________________________________________
+                ' Dim kgfalta As Double = kgreque - kgaporta
+                ''/// Trashhhh_________________________________________________________________________
 
 
 
                 registros_validar = registros_validar + 1
                 'Grabando resultados  primera  corrida 
 
-               ''// Registro Unico 
+                ''// Registro Unico 
 
 
                 indice = indice + 1
- 'MessageBox.Show(" indice : " + indice.ToString + "***CI: " + CStr(reader2.Item("no_ci")) + "**Rollo: " + CStr(Rollo) + "*****parte: " + CStr(parte_rollo) + "***gramaje kg/m: " + CStr(grama) + "***kg inic: " + CStr(kginiciales) + "***salida: " + CStr(KgFinales))
+                'MessageBox.Show(" indice : " + indice.ToString + "***CI: " + CStr(reader2.Item("no_ci")) + "**Rollo: " + CStr(Rollo) + "*****parte: " + CStr(parte_rollo) + "***gramaje kg/m: " + CStr(grama) + "***kg inic: " + CStr(kginiciales) + "***salida: " + CStr(KgFinales))
 
-'MessageBox.Show("Registro:" + CStr(indice))
+                'MessageBox.Show("Registro:" + CStr(indice))
 
 
 
@@ -1002,16 +1002,16 @@ End If
 
                 insertar_ayuda_aux(indice, inicio, fin, CRowID_fecha_programa, fecha_inicio_prod, no_pedido_ot, no_ci, id_maquina_consumo, empalmador, parte_rollo, CStr(Rollo), kginiciales, KgFinales, calidad, longitud_pedido_mm, ancho, grama, factor, kgreque, 0, 0, 0, 0, 0, 0, cortes_prod, ancho_lam_prod, trim)
 
-      'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")          ''// Insercion de  registro en resumen_t , extencion de  muestras  t datos de  resumen
-                 'resumen_metods_real.integra_resumen(indice, no_ci, empalmador, Rollo, Fecha_consumo, conse_aparicion, cor_kgnegativos)
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")          ''// Insercion de  registro en resumen_t , extencion de  muestras  t datos de  resumen
+                'resumen_metods_real.integra_resumen(indice, no_ci, empalmador, Rollo, Fecha_consumo, conse_aparicion, cor_kgnegativos)
 
-'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
 
 
 
 
             End While ''// Fin de   ciclo de registros de consumo y actualizacion primeras  variables 
-'MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
+            'MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
 
             reader2.Close()
             conn2.Close()
@@ -1034,14 +1034,14 @@ End If
 
 
 
-''----------------------------------------PRIMER  CICLO--------------------------------------------------''
+    ''----------------------------------------PRIMER  CICLO--------------------------------------------------''
 
     ''// Despliegue  de informacion de consumos + programa respecto a  fechas  definidas
     Public Shared Function carga_resultados(ByVal inicio, ByVal fin) As Boolean
 
         Dim registros_validar As Integer = 0
         Dim indice As Integer = 0 ''//Indice para cada  registro de  muestra
-       ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
+        ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
         '' // Se inicial ciclo de   recorrido para  cada  ingreso de  consumo registrado en orden desc 
 
         Try
@@ -1049,19 +1049,19 @@ End If
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
 
-             inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
-             fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
-              '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
+            inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
+            fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
+            '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
 
             'Dim mystring2 As String = "	select * FROM Consumos LEFT OUTER JOIN produccion ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_consumo between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo , Produccion.OT asc"
 
-  'Dim mystring2 As String = "  select * FROM PRODUCCION LEFT OUTER JOIN consumos ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo asc"
+            'Dim mystring2 As String = "  select * FROM PRODUCCION LEFT OUTER JOIN consumos ON ( rtrim(Consumos.no_ci) like Produccion.CI) where   Fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo asc"
 
-'FINAL
+            'FINAL
 
-    'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Fecha_consumo , Produccion.OT asc"
+            'Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Fecha_consumo , Produccion.OT asc"
 
-      Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
+            Dim mystring2 As String = "select *,ROW_NUMBER() OVER (ORDER BY Produccion.fecha_inicio_prod,Fecha_consumo , Produccion.OT ASC) AS IND FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'       order by Produccion.fecha_inicio_prod,Fecha_consumo,Produccion.OT asc"
 
 
 
@@ -1078,7 +1078,7 @@ End If
 
 
 
-''// Datos  produccion
+                ''// Datos  produccion
                 Dim ci_instruccioncorrugadora = (reader2.Item(0))
                 Dim calidad = (reader2.Item(1))
                 Dim flauta = (reader2.Item(2))
@@ -1091,19 +1091,19 @@ End If
 
 
 
-                 Dim ancho_lam_prod
+                Dim ancho_lam_prod
 
                 If (reader2.Item(7)).Equals(DBNull.Value) Then
- ancho_lam_prod = 0
+                    ancho_lam_prod = 0
 
-Else
-
-
-  ancho_lam_prod = (reader2.Item(7)) / 1000
+                Else
 
 
+                    ancho_lam_prod = (reader2.Item(7)) / 1000
 
-End If
+
+
+                End If
 
 
 
@@ -1116,7 +1116,7 @@ End If
 
 
 
-               ' Dim id_maquina_prod = (reader2.Item(21))
+                ' Dim id_maquina_prod = (reader2.Item(21))
                 Dim fecha_inicio_prod = (reader2.Item(10))
                 Dim fecha_final_prod = (reader2.Item(11))
 
@@ -1147,13 +1147,13 @@ End If
                 Dim cv1 = (reader2.Item(30))
                 Dim cv2 = (reader2.Item(31))
                 Dim idrow = (reader2.Item(32))
-Dim INDI = (reader2.Item(33))
+                Dim INDI = (reader2.Item(33))
 
 
-'''''''''''''''////////////////////////////////////////////-------------------------------------
+                '''''''''''''''////////////////////////////////////////////-------------------------------------
 
 
-               ' MessageBox.Show("CI consumos:" + CStr(no_ci) + "clave" + CStr(idrow) + " longitud" + CStr(longitud_pedido_mm))
+                ' MessageBox.Show("CI consumos:" + CStr(no_ci) + "clave" + CStr(idrow) + " longitud" + CStr(longitud_pedido_mm))
 
 
 
@@ -1176,10 +1176,10 @@ Dim INDI = (reader2.Item(33))
 
                 ''-----------------------------------calculo de  kg Kg Teoricos por CI y Empalmador
                 Dim kgreque As Double = ancho * CInt(longitud_pedido_mm) * factor * grama
-               ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
+                ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
 
 
-           ' MessageBox.Show("reque: " + CStr(kgreque))
+                ' MessageBox.Show("reque: " + CStr(kgreque))
 
 
 
@@ -1189,83 +1189,83 @@ Dim INDI = (reader2.Item(33))
 
 
                 ''// Mismo rollo mismos  kginiciales y finales
-                    Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
-                    Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
+                Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
+                Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
 
 
-''//kginiciales corregido y finales corr
+                ''//kginiciales corregido y finales corr
 
-'MessageBox.Show("Enviando: rollo:" + Rollo.ToString + "    kginiciales:" + kginiciales.ToString + " parte_rollo:" + parte_rollo.ToString + "fecha consumo: " + Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss").ToString + "  inicio : " + inicio.ToString + " fin: " + fin.ToString)
-'MessageBox.Show("antes indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kginiciales " + CStr(kginiciales) + " parte " + parte_rollo.ToString)
+                'MessageBox.Show("Enviando: rollo:" + Rollo.ToString + "    kginiciales:" + kginiciales.ToString + " parte_rollo:" + parte_rollo.ToString + "fecha consumo: " + Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss").ToString + "  inicio : " + inicio.ToString + " fin: " + fin.ToString)
+                'MessageBox.Show("antes indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kginiciales " + CStr(kginiciales) + " parte " + parte_rollo.ToString)
 
-Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
-'MessageBox.Show("indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kginiciales " + CStr(kginiciales) + " parte " + parte_rollo.ToString + " iniciales corr: " + kginicialescorregido.ToString)
+                Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
+                'MessageBox.Show("indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kginiciales " + CStr(kginiciales) + " parte " + parte_rollo.ToString + " iniciales corr: " + kginicialescorregido.ToString)
 
-Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
-'MessageBox.Show("indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kgfinales " + CStr(KgFinales) + " parte " + parte_rollo.ToString + "  finales  corr:" + kgfinalescorregido.ToString)
+                Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
+                'MessageBox.Show("indi evaluado:" + CStr(INDI) + " rollo:" + Rollo + " kgfinales " + CStr(KgFinales) + " parte " + parte_rollo.ToString + "  finales  corr:" + kgfinalescorregido.ToString)
 
-'MessageBox.Show("2")
-
-
-''// BJ Consecutivo aparicion parte-Lote
-
-Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
-'MessageBox.Show(" conse  apar BJ: " + conse_aparicion.ToString)
+                'MessageBox.Show("2")
 
 
+                ''// BJ Consecutivo aparicion parte-Lote
 
-
-
-''// BK Correccion kg  negativos  por  cambio
-
-Dim cor_kgnegativos = 0
-
-If (conse_aparicion = 0 And kgfinalescorregido > 0) Then
-
-cor_kgnegativos = 0
-
-Else
-
-cor_kgnegativos = 1
-
-
-End If
+                Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
+                'MessageBox.Show(" conse  apar BJ: " + conse_aparicion.ToString)
 
 
 
-'MessageBox.Show("cor_kgnegativos: " + cor_kgnegativos.ToString)
 
-''// kg escaneados  o consumo bruto AE
+
+                ''// BK Correccion kg  negativos  por  cambio
+
+                Dim cor_kgnegativos = 0
+
+                If (conse_aparicion = 0 And kgfinalescorregido > 0) Then
+
+                    cor_kgnegativos = 0
+
+                Else
+
+                    cor_kgnegativos = 1
+
+
+                End If
+
+
+
+                'MessageBox.Show("cor_kgnegativos: " + cor_kgnegativos.ToString)
+
+                ''// kg escaneados  o consumo bruto AE
 
                 ''//Calculo obsoleto
                 Dim entrada As Double = get_entrada(CStr(Rollo))
                 Dim salidas As Double = get_salida(CStr(Rollo))
-               ' Dim kgscan As Double = entrada - salidas
+                ' Dim kgscan As Double = entrada - salidas
 
 
 
 
 
 
-''// Nuevo calculo
-Dim kgscan As Double
-If (kginicialescorregido < 0) Then
+                ''// Nuevo calculo
+                Dim kgscan As Double
+                If (kginicialescorregido < 0) Then
 
-kgscan = 0
+                    kgscan = 0
 
-Else
+                Else
 
-kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
+                    kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
 
-End If
-
-
-
-'MessageBox.Show("kg iniciales corr  " + CStr(kginicialescorregido) + "kgfinales corr " + CStr(kgfinalescorregido))
+                End If
 
 
 
-''/// Trashhhhh***********************************************************
+                'MessageBox.Show("kg iniciales corr  " + CStr(kginicialescorregido) + "kgfinales corr " + CStr(kgfinalescorregido))
+
+
+
+                ''/// Trashhhhh***********************************************************
                 ''------------------------------------calculo kg aporta
                 Dim kgaporta As Double
                 If (kgreque <= kgscan) Then
@@ -1279,7 +1279,7 @@ End If
 
                 ''------------------------------------ calculo kg  faltantes ci
                 Dim kgfalta As Double = kgreque - kgaporta
-''/// Trashhhh_________________________________________________________________________
+                ''/// Trashhhh_________________________________________________________________________
 
 
 
@@ -1292,25 +1292,25 @@ End If
 
                 indice = indice + 1
 
-'MessageBox.Show("Registro:" + CStr(indice))
+                'MessageBox.Show("Registro:" + CStr(indice))
 
-'MessageBox.Show(" kginiciales  corr: " + kginicialescorregido.ToString + " finalescorr" + kgfinalescorregido.ToString + " indice: " + indice.ToString + " bk :" + cor_kgnegativos.ToString)
+                'MessageBox.Show(" kginiciales  corr: " + kginicialescorregido.ToString + " finalescorr" + kgfinalescorregido.ToString + " indice: " + indice.ToString + " bk :" + cor_kgnegativos.ToString)
 
 
                 ''// insercion de  registro en muestra_t con primeros  datos
 
                 insertar_ayuda(indice, inicio, fin, CRowID_fecha_programa, fecha_inicio_prod, no_pedido_ot_p, ci_instruccioncorrugadora, id_maquina_consumo, empalmador, parte_rollo, CStr(Rollo), kginiciales, KgFinales, calidad, longitud_pedido_mm, ancho, grama, factor, kgreque, kgscan, kgaporta, kgdespues, kgfalta, kginicialescorregido, kgfinalescorregido, cortes_prod, ancho_lam_prod, trim)
 
-      'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")          ''// Insercion de  registro en resumen_t , extencion de  muestras  t datos de  resumen
-                 resumen_metods_real.integra_resumen(indice, ci_instruccioncorrugadora, empalmador, CStr(Rollo), fecha_inicio_prod, conse_aparicion, cor_kgnegativos)
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")          ''// Insercion de  registro en resumen_t , extencion de  muestras  t datos de  resumen
+                resumen_metods_real.integra_resumen(indice, ci_instruccioncorrugadora, empalmador, CStr(Rollo), fecha_inicio_prod, conse_aparicion, cor_kgnegativos)
 
-'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
 
 
 
 
             End While ''// Fin de   ciclo de registros de consumo y actualizacion primeras  variables 
-'MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
+            'MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
 
             reader2.Close()
             conn2.Close()
@@ -1335,27 +1335,27 @@ End If
 
 
 
- Public Shared Function carga_programa_semaforo(ByVal inicio, ByVal fin) As Boolean
+    Public Shared Function carga_programa_semaforo(ByVal inicio, ByVal fin) As Boolean
 
         Dim registros_validar As Integer = 0
         Dim indice As Integer = 0 ''//Indice para cada  registro de  muestra
-       ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
+        ' MessageBox.Show("Mostrando del " + CStr(inicio) + "    al " + CStr(fin))
         '' // Se inicial ciclo de   recorrido para  cada  ingreso de  consumo registrado en orden desc 
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
 
-             inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
-             fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
-              '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
+            inicio = Format(CDate(inicio), "yyyy-MM-dd  HH:mm:ss")
+            fin = Format(CDate(fin), "yyyy-MM-dd  HH:mm:ss")
+            '  MessageBox.Show("Nuevo: " + CStr(inicio) + "    al " + CStr(fin))
 
             'Dim mystring2 As String = "	select * FROM Consumos LEFT OUTER JOIN programado ON ( Consumos.CRowID_fecha_programa like Programado.fecha_hora_programada) where   Fecha_consumo between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'     order by Fecha_consumo asc"
 
-  Dim mystring2 As String = "  select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC)AS  IND  FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'         order by Fecha_consumo , Produccion.OT asc"
+            Dim mystring2 As String = "  select *,ROW_NUMBER() OVER (ORDER BY Fecha_consumo , Produccion.OT ASC)AS  IND  FROM produccion   INNER  JOIN Consumos ON ( Produccion.CI like rtrim(Consumos.no_ci) ) where   Produccion.fecha_inicio_prod between  '" + CStr(inicio) + "'    and  '" + CStr(fin) + "'         order by Fecha_consumo , Produccion.OT asc"
 
 
-Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
+            Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
             conn2.Open()
             Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
 
@@ -1364,7 +1364,7 @@ Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
             While reader2.Read()
 
 
-''// Datos  produccion
+                ''// Datos  produccion
                 Dim ci_instruccioncorrugadora = (reader2.Item(0))
                 Dim calidad = (reader2.Item(1))
                 Dim flauta = (reader2.Item(2))
@@ -1378,7 +1378,7 @@ Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
                 Dim trim = (reader2.Item(8))
                 Dim estado_ci_prod = (reader2.Item(9))
 
-               ' Dim id_maquina_prod = (reader2.Item(21))
+                ' Dim id_maquina_prod = (reader2.Item(21))
                 Dim fecha_inicio_prod = (reader2.Item(10))
                 Dim fecha_final_prod = (reader2.Item(11))
 
@@ -1411,11 +1411,11 @@ Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
 
 
 
-Dim INDI = (reader2.Item(33))
+                Dim INDI = (reader2.Item(33))
 
 
-Dim cortes = 0
-Dim trimv = 0
+                Dim cortes = 0
+                Dim trimv = 0
                 Dim factor = set_factor(empalmador, flauta)
 
 
@@ -1435,10 +1435,10 @@ Dim trimv = 0
 
                 ''-----------------------------------calculo de  kg Kg Teoricos por CI y Empalmador
                 Dim kgreque As Double = ancho * CInt(longitud_pedido_mm) * factor * grama
-               ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
+                ' MessageBox.Show(" ancho m :" + CStr(ancho) + " Largo m " + CStr(longitud_pedido_mm) + " gramaje: " + CStr(grama) + " factor: " + CStr(factor))
 
 
-           ' MessageBox.Show("reque: " + CStr(kgreque))
+                ' MessageBox.Show("reque: " + CStr(kgreque))
 
 
 
@@ -1448,71 +1448,71 @@ Dim trimv = 0
 
 
                 ''// Mismo rollo mismos  kginiciales y finales
-                    Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
-                    Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
+                Dim v_mismorollo_kginiciales = get_mismorollokgini(Rollo, kginiciales)
+                Dim v_mismorollo_kgfinales = get_mismorollokgfinal(Rollo, KgFinales)
 
 
-''//kginiciales corregido y finales corr
+                ''//kginiciales corregido y finales corr
 
-'MessageBox.Show("1")
+                'MessageBox.Show("1")
 
-Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
-
-
-'MessageBox.Show("ok")
-
-Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
-
-'MessageBox.Show("2")
-''// BJ Consecutivo aparicion parte-Lote
-
-Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
-
-''// BK Correccion kg  negativos  por  cambio
-
-Dim cor_kgnegativos = 0
-
-If (conse_aparicion = 0 And kgfinalescorregido > 0) Then
-
-cor_kgnegativos = 0
-
-Else
-
-cor_kgnegativos = 1
+                Dim kginicialescorregido As Double = get_kginicorr(Rollo, kginiciales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
 
 
-End If
+                'MessageBox.Show("ok")
+
+                Dim kgfinalescorregido = get_kgfinalcorr(Rollo, KgFinales, parte_rollo, Format(CDate(Fecha_consumo), "yyyy-MM-dd  HH:mm:ss"), inicio, fin, INDI)
+
+                'MessageBox.Show("2")
+                ''// BJ Consecutivo aparicion parte-Lote
+
+                Dim conse_aparicion = get_consec_aparicion(parte_rollo, Rollo, inicio, fin, INDI)
+
+                ''// BK Correccion kg  negativos  por  cambio
+
+                Dim cor_kgnegativos = 0
+
+                If (conse_aparicion = 0 And kgfinalescorregido > 0) Then
+
+                    cor_kgnegativos = 0
+
+                Else
+
+                    cor_kgnegativos = 1
 
 
+                End If
 
 
 
-''// kg escaneados  o consumo bruto AE
+
+
+                ''// kg escaneados  o consumo bruto AE
 
                 ''//Calculo obsoleto
                 Dim entrada As Double = get_entrada(CStr(Rollo))
                 Dim salidas As Double = get_salida(CStr(Rollo))
-               ' Dim kgscan As Double = entrada - salidas
+                ' Dim kgscan As Double = entrada - salidas
 
-''// Nuevo calculo
-Dim kgscan As Double
-If (kginicialescorregido < 0) Then
+                ''// Nuevo calculo
+                Dim kgscan As Double
+                If (kginicialescorregido < 0) Then
 
-kgscan = 0
+                    kgscan = 0
 
-Else
+                Else
 
-kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
+                    kgscan = (kginicialescorregido - kgfinalescorregido) * cor_kgnegativos
 
-End If
-
-
+                End If
 
 
 
 
 
-''/// Trashhhhh***********************************************************
+
+
+                ''/// Trashhhhh***********************************************************
                 ''------------------------------------calculo kg aporta
                 Dim kgaporta As Double
                 If (kgreque <= kgscan) Then
@@ -1526,7 +1526,7 @@ End If
 
                 ''------------------------------------ calculo kg  faltantes ci
                 Dim kgfalta As Double = kgreque - kgaporta
-''/// Trashhhh_________________________________________________________________________
+                ''/// Trashhhh_________________________________________________________________________
 
 
 
@@ -1541,11 +1541,11 @@ End If
 
 
                 ''// insercion de  registro en muestra_t con primeros  datos
-'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  muestras t")
                 insertar_ayuda(indice, inicio, fin, CRowID_fecha_programa, Fecha_consumo, no_pedido_ot, no_ci, id_maquina_consumo, empalmador, parte_rollo, Rollo, kginiciales, KgFinales, calidad, longitud_pedido_mm, ancho, grama, factor, kgreque, kgscan, kgaporta, kgdespues, kgfalta, kginicialescorregido, kgfinalescorregido, cortes, ancho, trimv)
-'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
+                'MessageBox.Show("Insertado indice" + CStr(indice) + " en  resumen t")
                 ''// Insercion de  registro en resumen_t , extencion de  muestras  t datos de  resumen
-                 resumen_metods_real.integra_resumen(indice, no_ci, empalmador, Rollo, Fecha_consumo, conse_aparicion, cor_kgnegativos)
+                resumen_metods_real.integra_resumen(indice, no_ci, empalmador, Rollo, Fecha_consumo, conse_aparicion, cor_kgnegativos)
 
 
 
@@ -1553,7 +1553,7 @@ End If
 
 
             End While ''// Fin de   ciclo de registros de consumo y actualizacion primeras  variables 
-MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
+            MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 1)")
 
             reader2.Close()
             conn2.Close()
@@ -1581,41 +1581,41 @@ MessageBox.Show("Fin de  cliclo 1  calculos  e integracion de  resumen (resumen 
 
 
     Public Shared Function get_kgdisponiblerollo(ByVal parte, ByVal rollo) As Double
-'MessageBox.Show("1")
- Dim sal As Double
-'MessageBox.Show("2")
+        'MessageBox.Show("1")
+        Dim sal As Double
+        'MessageBox.Show("2")
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
             conn2.ConnectionString = cs
-'MessageBox.Show("3")
+            'MessageBox.Show("3")
             Dim mystring2 As String = "select  sum(kgescaneados) as salida  from muestras_r where   rollo = '" + CStr(rollo) + "'" + " and " + "parte = '" + CStr(parte) + "'"
             Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
             conn2.Open()
             Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
-'MessageBox.Show("4")
+            'MessageBox.Show("4")
             Dim conta As Integer = 0
 
 
 
-'''''
+            '''''
 
 
 
-'''''''
+            '''''''
 
-While reader2.Read()
+            While reader2.Read()
 
 
 
-'MessageBox.Show("5")
- If reader2.Item("salida").Equals(DBNull.Value) Then
-'MessageBox.Show("si")
-            sal = 0.0
-Else
-sal = CInt(reader2.Item("salida"))
-'MessageBox.Show("no")
-                   End If
+                'MessageBox.Show("5")
+                If reader2.Item("salida").Equals(DBNull.Value) Then
+                    'MessageBox.Show("si")
+                    sal = 0.0
+                Else
+                    sal = CInt(reader2.Item("salida"))
+                    'MessageBox.Show("no")
+                End If
 
 
 
@@ -1673,7 +1673,7 @@ sal = CInt(reader2.Item("salida"))
 
     Public Shared Function get_rollosxci(ByVal ci, ByVal emp, ByVal ot, ByVal ind) As Integer
         Dim sal As Double = 0
-'MessageBox.Show("calculando  rollos  x  ci para indice:" + ind.ToString + " ot recibida: " + ot.ToString)
+        'MessageBox.Show("calculando  rollos  x  ci para indice:" + ind.ToString + " ot recibida: " + ot.ToString)
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
@@ -1685,9 +1685,9 @@ sal = CInt(reader2.Item("salida"))
             Dim conta As Integer = 0
             While reader2.Read()
 
-               ' sal = CInt(reader2.Item("salida"))
+                ' sal = CInt(reader2.Item("salida"))
 
-            sal = sal + 1
+                sal = sal + 1
 
 
             End While
@@ -1891,24 +1891,22 @@ sal = CInt(reader2.Item("salida"))
                 Dim rollo13 = reader2.Item(11)
                 Dim parte13 = reader2.Item(10)
                 Dim cis = reader2.Item(7)
- Dim ot_1 = reader2.Item(6)
+                Dim ot_1 = reader2.Item(6)
                 Dim cortes = reader2.Item(43)
                 Dim ancho_lam = reader2.Item(44)
                 Dim trim_prod = reader2.Item(44)
-                 Dim indice = reader2.Item(0)
-Dim emp = reader2.Item(9)
+                Dim indice = reader2.Item(0)
+                Dim emp = reader2.Item(9)
 
 
 
 
 
-  ''******************************ANCHO DE ROLLOS USADO POR OT (V)
+                ''******************************ANCHO DE ROLLOS USADO POR OT (V)
 
-    Dim ancho_usado As Double = ancho_lam * cortes
-'messagebox.show("ancho usado V :" + cstr(ancho_usado))
-    update_v(indice, ancho_usado)
-
-
+                Dim ancho_usado As Double = ancho_lam * cortes
+                'messagebox.show("ancho usado V :" + cstr(ancho_usado))
+                update_v(indice, ancho_usado)
 
 
 
@@ -1917,12 +1915,14 @@ Dim emp = reader2.Item(9)
 
 
 
-               ' MessageBox.Show("rollo :" + CStr(rollo13) + " parte= " + CStr(parte13) + " indice:" + CStr(indice))
+
+
+                ' MessageBox.Show("rollo :" + CStr(rollo13) + " parte= " + CStr(parte13) + " indice:" + CStr(indice))
                 ''------------------------------------------------------------------------calculo columna  AF 
                 Dim kgdisponiblerollo As Double = get_kgdisponiblerollo(parte13, rollo13)
-               ' MessageBox.Show("Kg disponible  rollo :" + CStr(rollo13) + " = " + CStr(kgdisponiblerollo))
+                ' MessageBox.Show("Kg disponible  rollo :" + CStr(rollo13) + " = " + CStr(kgdisponiblerollo))
                 update_kgdisponiblerollo(parte13, rollo13, kgdisponiblerollo)
-  'MessageBox.Show("Kg disponible  rollo 2 :" + CStr(rollo13) + " = " + CStr(kgdisponiblerollo))
+                'MessageBox.Show("Kg disponible  rollo 2 :" + CStr(rollo13) + " = " + CStr(kgdisponiblerollo))
                 ''--------------------------------------------------------------------------------------------------
 
 
@@ -1946,11 +1946,11 @@ Dim emp = reader2.Item(9)
 
                 Dim cisep2 As Double = get_cisep(parte13, rollo13, cis)
                 'MessageBox.Show("AU proporcion  ci    : " + CStr(cis) + "parte :" + CStr(parte13) + "rollo :" + CStr(rollo13))
-               'MessageBox.Show("   AT ci separando   : " + CStr(cisep2) + " indice: " + CStr(indice))
+                'MessageBox.Show("   AT ci separando   : " + CStr(cisep2) + " indice: " + CStr(indice))
 
-   '' calculo proporcion CI AU
+                '' calculo proporcion CI AU
                 Dim proporcion As Double = 1 / cisep2
-               ' MessageBox.Show(" proporcion ci consumos    : " + CStr(proporcion))
+                ' MessageBox.Show(" proporcion ci consumos    : " + CStr(proporcion))
                 update_proporcionci(parte13, rollo13, proporcion)
 
 
@@ -1958,10 +1958,10 @@ Dim emp = reader2.Item(9)
             End While ''// Fin registros  base  calculos  fase 1
         Catch e As Exception
 
- MessageBox.Show("Calculos 2 :" + e.ToString)
+            MessageBox.Show("Calculos 2 :" + e.ToString)
         End Try
 
-      '  MessageBox.Show("Ok. Oprima Actualizar 2 ")
+        '  MessageBox.Show("Ok. Oprima Actualizar 2 ")
 
         Return 0
 
@@ -2152,52 +2152,52 @@ Dim emp = reader2.Item(9)
 
 
 
-Public shared Function get_anchoutil(ByVal ci, ByVal parte, ByVal rollo) As Double
+    Public Shared Function get_anchoutil(ByVal ci, ByVal parte, ByVal rollo) As Double
 
 
-''//OBTENER ANCHO UTLIZABLE (W)
-''// SUMAR  ANCHO ROLLOS  USADO (SHORTCHAR07) DE TODOS LOS  REGISTROS  (CALCULOS  UD14) DONDE  SEA  MISMA  PARTE , ROLLO Y CI
-Try
+        ''//OBTENER ANCHO UTLIZABLE (W)
+        ''// SUMAR  ANCHO ROLLOS  USADO (SHORTCHAR07) DE TODOS LOS  REGISTROS  (CALCULOS  UD14) DONDE  SEA  MISMA  PARTE , ROLLO Y CI
+        Try
 
-Dim conn2 As OdbcConnection = New OdbcConnection()
-conn2.ConnectionString = cs
-Dim mystring2 As String = "select * from muestras_r"
-Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
-conn2.Open()
-Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
-Dim conta As Integer = 0
-Dim suma_ss1 As Double = 0
-Dim total1 As Double = 0
-Dim total2 As Double = 0
+            Dim conn2 As OdbcConnection = New OdbcConnection()
+            conn2.ConnectionString = cs
+            Dim mystring2 As String = "select * from muestras_r"
+            Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
+            conn2.Open()
+            Dim reader2 As OdbcDataReader = cmd2.ExecuteReader()
+            Dim conta As Integer = 0
+            Dim suma_ss1 As Double = 0
+            Dim total1 As Double = 0
+            Dim total2 As Double = 0
 
-''// Se hace la comparativa  contra  el registro actual
-While reader2.Read()
-
-
-  Dim rl_parte As String = CStr(reader2.Item("parte"))
-  Dim rl_rollo As String = CStr(reader2.Item("rollo"))
-  Dim rl_ci As String = CStr(reader2.Item("ci"))
-  Dim rl_anchorollousado As Double = CDbl(reader2.Item("V"))
-
-  ''// MISMA  PARTE
-  If (rl_parte = parte) Then
-    If (rl_rollo = rollo) Then ''//MISMO ROLLO
-     If (rl_ci = ci) Then ''//MISMA  CI
-      total1 = total1 + rl_anchorollousado
-     End If
-    End If
-  End If
+            ''// Se hace la comparativa  contra  el registro actual
+            While reader2.Read()
 
 
-End While
-Return total1
+                Dim rl_parte As String = CStr(reader2.Item("parte"))
+                Dim rl_rollo As String = CStr(reader2.Item("rollo"))
+                Dim rl_ci As String = CStr(reader2.Item("ci"))
+                Dim rl_anchorollousado As Double = CDbl(reader2.Item("V"))
 
- Catch ex As Exception
-        MsgBox("ancho  util :" & vbCrLf & ex.Message)
-End Try
+                ''// MISMA  PARTE
+                If (rl_parte = parte) Then
+                    If (rl_rollo = rollo) Then ''//MISMO ROLLO
+                        If (rl_ci = ci) Then ''//MISMA  CI
+                            total1 = total1 + rl_anchorollousado
+                        End If
+                    End If
+                End If
 
 
-End Function
+            End While
+            Return total1
+
+        Catch ex As Exception
+            MsgBox("ancho  util :" & vbCrLf & ex.Message)
+        End Try
+
+
+    End Function
 
 
 
@@ -2265,7 +2265,7 @@ End Function
 
 
 
-    Public Shared Function get_ciconsumoacumuladorollo(ByVal indice, ByVal parte, ByVal rollo) As double
+    Public Shared Function get_ciconsumoacumuladorollo(ByVal indice, ByVal parte, ByVal rollo) As Double
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
@@ -2369,7 +2369,7 @@ End Function
             Dim suma_ss1 As Double = 0
             Dim total1 As Double = 0
             Dim total2 As Double = 0
-'MessageBox.Show("1")
+            'MessageBox.Show("1")
             ''// Se hace la comparativa  contra  el registro actual
             While reader2.Read()
 
@@ -2378,13 +2378,13 @@ End Function
                 Dim rl_rollo As String = CStr(reader2.Item(11))
                 Dim rl_ci As String = CStr(reader2.Item(7))
                 Dim rl_indice As Integer = CInt(reader2.Item(0))
-'MessageBox.Show("1.1")
+                'MessageBox.Show("1.1")
                 Dim kgrepci = reader2.Item(52)
                 Dim rl_kgreqci As Double
 
-'MessageBox.Show("1.2")
+                'MessageBox.Show("1.2")
 
-'MessageBox.Show("datos  recogidos :   parte " + CStr(rl_parte) + " rollo :" + CStr(rollo) + " CI:" + CStr(rl_ci) + " INdice:" + CStr(rl_indice))
+                'MessageBox.Show("datos  recogidos :   parte " + CStr(rl_parte) + " rollo :" + CStr(rollo) + " CI:" + CStr(rl_ci) + " INdice:" + CStr(rl_indice))
 
                 If (kgrepci.Equals(" ")) Then
 
@@ -2393,13 +2393,13 @@ End Function
                 Else
                     If (kgrepci.Equals(DBNull.Value)) Then
 
-                    rl_kgreqci = 0
+                        rl_kgreqci = 0
                     Else
-                    rl_kgreqci = CDbl(kgrepci)
+                        rl_kgreqci = CDbl(kgrepci)
                     End If
 
                 End If
-'MessageBox.Show("Val AS :" + CStr(rl_kgreqci))
+                'MessageBox.Show("Val AS :" + CStr(rl_kgreqci))
                 'messagebox.show("Datos  leidos :" +  cstr(rl_parte)+ " "+ cstr(rl_rollo)+ " " + cstr(rl_ci)+" "+ cstr(rl_indice) )
 
                 If (rl_parte = parte) Then
@@ -2416,7 +2416,7 @@ End Function
 
                     End If
                 End If
-'MessageBox.Show("1.4")
+                'MessageBox.Show("1.4")
                 'messagebox.show("7")
                 ''//////////////////////////////
                 If (rl_parte = parte) Then
@@ -2438,16 +2438,16 @@ End Function
                     End If
                 End If
 
-'MessageBox.Show("1.5")
+                'MessageBox.Show("1.5")
 
                 conta = conta + 1
 
             End While
 
-           ' MessageBox.Show("Registros leidos  antes de  este indice:" + CStr(conta))
-'MessageBox.Show("C1:" + CStr(total1) + "  c2 :" + CStr(total2))
+            ' MessageBox.Show("Registros leidos  antes de  este indice:" + CStr(conta))
+            'MessageBox.Show("C1:" + CStr(total1) + "  c2 :" + CStr(total2))
             Dim neto As Double = total1 - total2
-           ' MessageBox.Show("AH kgyaasign salida:" + CStr(neto))
+            ' MessageBox.Show("AH kgyaasign salida:" + CStr(neto))
 
             Return neto
 
@@ -2644,7 +2644,7 @@ End Function
     Public Shared Function get_ss1_factor(ByVal indice_reg, ByVal ci_reg, ByVal emp_reg) As Double
 
         '' obteniendo matriz  de registros  anteriores
-'MessageBox.Show(" comenzando ss1 ")
+        'MessageBox.Show(" comenzando ss1 ")
         Dim i As Integer = indice_reg
 
         Try
@@ -2689,8 +2689,8 @@ End Function
                 conta = conta + 1
 
             End While
-           ' MessageBox.Show(" registros  antes ss1: " + CStr(conta))
-           ' MessageBox.Show(" suma_ss1: " + CStr(suma_ss1))
+            ' MessageBox.Show(" registros  antes ss1: " + CStr(conta))
+            ' MessageBox.Show(" suma_ss1: " + CStr(suma_ss1))
             Return suma_ss1
 
 
@@ -2780,10 +2780,10 @@ End Function
 
                     If (ci_mat.Equals(ci_reg)) Then
 
-                         If (parte_mat.Equals(parte_reg)) Then
+                        If (parte_mat.Equals(parte_reg)) Then
 
-                             If (rollo_mat.Equals(rollo_reg)) Then
-                             suma_ss1 = suma_ss1 + kgreq1ci_mat
+                            If (rollo_mat.Equals(rollo_reg)) Then
+                                suma_ss1 = suma_ss1 + kgreq1ci_mat
 
                             End If
                         End If
@@ -3001,7 +3001,7 @@ End Function
                 Dim a_rxci = reader2.Item(24)
 
                 Dim a_fac = reader2.Item(0)
-Dim a_ot = reader2.Item(6)
+                Dim a_ot = reader2.Item(6)
                 Dim a_ci = reader2.Item(7)
 
 
@@ -3012,7 +3012,7 @@ Dim a_ot = reader2.Item(6)
                 Dim ax_ancho = reader2.Item(16)
                 Dim ax_maquina = reader2.Item(8)
 
-                
+
 
                 ''// Dato prodcuccion
                 Dim v_prod = reader2.Item(48)
@@ -3052,22 +3052,20 @@ Dim a_ot = reader2.Item(6)
                     porc_anchopapelusado = v_prod / ancho_util
 
 
-                   
+
 
                     ''messagebox.show("bb")
                 End If
 
 
 
-                   
-                    'messagebox.show("c")
-                   
-                    porc_anchopapelusado = Decimal.Round(porc_anchopapelusado, 2)
 
-                   
-                    update_porcpapel(a_fac, porc_anchopapelusado)
+                'messagebox.show("c")
 
-                   
+                porc_anchopapelusado = Decimal.Round(porc_anchopapelusado, 2)
+
+
+                update_porcpapel(a_fac, porc_anchopapelusado)
 
 
 
@@ -3077,120 +3075,122 @@ Dim a_ot = reader2.Item(6)
 
 
 
-                    'kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo
-
-                    'MessageBox.Show("1.4")
 
 
-                    ''---------------------------------------------// calculando CI consumo para rollo AV
-                    Dim ciconsumopararollo As Double = get_cisconsumopararollo(parte13, rollo13)
-                    'MessageBox.Show("1.5")
-                    update_nconsumospararollo(a_fac, ciconsumopararollo)
-                    'MessageBox.Show("ci consumo para rollo :" + CStr(ciconsumopararollo))
+                'kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo
+
+                'MessageBox.Show("1.4")
+
+
+                ''---------------------------------------------// calculando CI consumo para rollo AV
+                Dim ciconsumopararollo As Double = get_cisconsumopararollo(parte13, rollo13)
+                'MessageBox.Show("1.5")
+                update_nconsumospararollo(a_fac, ciconsumopararollo)
+                'MessageBox.Show("ci consumo para rollo :" + CStr(ciconsumopararollo))
 
 
 
-                    ''//------------------------------------------ci consumo acumulado para rollo AW
-                    '0MessageBox.Show(" entradas AW para  indice:" + CStr(a_fac) + " parte:" + CStr(parte13) + " rollo:" + CStr(rollo13))
-                    Dim ciconsumoacumuladopararollo As Double = get_ciconsumoacumuladorollo(a_fac, parte13, rollo13)
+                ''//------------------------------------------ci consumo acumulado para rollo AW
+                '0MessageBox.Show(" entradas AW para  indice:" + CStr(a_fac) + " parte:" + CStr(parte13) + " rollo:" + CStr(rollo13))
+                Dim ciconsumoacumuladopararollo As Double = get_ciconsumoacumuladorollo(a_fac, parte13, rollo13)
 
-                    ' MessageBox.Show("consumo acumulado para  rollo :" + CStr(ciconsumoacumuladopararollo))
+                ' MessageBox.Show("consumo acumulado para  rollo :" + CStr(ciconsumoacumuladopararollo))
 
-                    update_nconsumosacupararollo(a_fac, ciconsumoacumuladopararollo)
-
-                   
-
-                    'MessageBox.Show("AH celda    entradas :" + " indice " + CStr(a_fac) + "  parte:" + CStr(parte13) + " rollo :" + CStr(rollo13) + "  CI: " + CStr(a_ci))
-
-                    ''// kg  ya asignados de ci x rollo ah
-
-                    'MessageBox.Show("kgdeconsumoasignadoantesCI AH     indice :  " + CStr(a_fac) + "   parte  " + CStr(parte13) + "  rollo " + CStr(rollo13) + "   ci " + CStr(a_ci))
-                    Dim kgdeconsumoasignadoantesCI As Double = get_kgconsumoyaasignado(a_fac, parte13, rollo13, a_ci)
-                    'MessageBox.Show("AH " + kgdeconsumoasignadoantesCI.ToString)
-
-                    update_consumoya(a_fac, kgdeconsumoasignadoantesCI)
-                    ' MessageBox.Show("kg de consumo asignado antes de CI :" + CStr(kgdeconsumoasignadoantesCI))
-                   
-                    'MessageBox.Show("1.7")
+                update_nconsumosacupararollo(a_fac, ciconsumoacumuladopararollo)
 
 
-                    ''//kg de consumo disponible  por rollo acumulado ai
-                    Dim kgconsumodisponiblexrolloacumulado As Double = a_kgconsumodisponiblexrollo - kgdeconsumoasignadoantesCI
-                    ' MessageBox.Show("disponible rollo : " + CStr(a_kgconsumodisponiblexrollo) + " consumo asignado:" + CStr(kgdeconsumoasignadoantesCI))
-                    ' MessageBox.Show("kg de consumo disponible  x rollo acumulado :" + CStr(kgconsumodisponiblexrolloacumulado))
-                    'MessageBox.Show("1.8")
-                    update_kgdisponibleporrolloacum(a_fac, kgconsumodisponiblexrolloacumulado)
 
-                    'MessageBox.Show("1.8.1")
-                    ''// kg  requeridos ci 1 rollo  -------------------------------------------AJ
-                    Dim kgreqci1rollo As Double
-                    'MessageBox.Show("a_rxci" + CStr(a_rxci))
-                    'MessageBox.Show("1.8.2")
-                    'If (a_ot.Equals(DBNull.Value)) Then
-                    'a_ot = ""
+                'MessageBox.Show("AH celda    entradas :" + " indice " + CStr(a_fac) + "  parte:" + CStr(parte13) + " rollo :" + CStr(rollo13) + "  CI: " + CStr(a_ci))
 
-                    'End If
-                   
-                    'MessageBox.Show("Indice: " + a_fac.ToString + " ag roollos x ci : " + a_rxci.ToString + " medida ot:" + CStr(a_ot.ToString.Length) + " ot:" + a_ot.ToString)
-                    If ((a_rxci = 1) And (a_ot.ToString.Length > 1)) Then
-                        'MessageBox.Show("condicion primarias ambas")
-                        If (kgconsumodisponiblexrolloacumulado <= a_req) Then
-                            ' MessageBox.Show("if2")
-                            kgreqci1rollo = kgconsumodisponiblexrolloacumulado
-                        Else
-                            kgreqci1rollo = a_req
-                            'MessageBox.Show("else 1")
-                        End If
+                ''// kg  ya asignados de ci x rollo ah
+
+                'MessageBox.Show("kgdeconsumoasignadoantesCI AH     indice :  " + CStr(a_fac) + "   parte  " + CStr(parte13) + "  rollo " + CStr(rollo13) + "   ci " + CStr(a_ci))
+                Dim kgdeconsumoasignadoantesCI As Double = get_kgconsumoyaasignado(a_fac, parte13, rollo13, a_ci)
+                'MessageBox.Show("AH " + kgdeconsumoasignadoantesCI.ToString)
+
+                update_consumoya(a_fac, kgdeconsumoasignadoantesCI)
+                ' MessageBox.Show("kg de consumo asignado antes de CI :" + CStr(kgdeconsumoasignadoantesCI))
+
+                'MessageBox.Show("1.7")
+
+
+                ''//kg de consumo disponible  por rollo acumulado ai
+                Dim kgconsumodisponiblexrolloacumulado As Double = a_kgconsumodisponiblexrollo - kgdeconsumoasignadoantesCI
+                ' MessageBox.Show("disponible rollo : " + CStr(a_kgconsumodisponiblexrollo) + " consumo asignado:" + CStr(kgdeconsumoasignadoantesCI))
+                ' MessageBox.Show("kg de consumo disponible  x rollo acumulado :" + CStr(kgconsumodisponiblexrolloacumulado))
+                'MessageBox.Show("1.8")
+                update_kgdisponibleporrolloacum(a_fac, kgconsumodisponiblexrolloacumulado)
+
+                'MessageBox.Show("1.8.1")
+                ''// kg  requeridos ci 1 rollo  -------------------------------------------AJ
+                Dim kgreqci1rollo As Double
+                'MessageBox.Show("a_rxci" + CStr(a_rxci))
+                'MessageBox.Show("1.8.2")
+                'If (a_ot.Equals(DBNull.Value)) Then
+                'a_ot = ""
+
+                'End If
+
+                'MessageBox.Show("Indice: " + a_fac.ToString + " ag roollos x ci : " + a_rxci.ToString + " medida ot:" + CStr(a_ot.ToString.Length) + " ot:" + a_ot.ToString)
+                If ((a_rxci = 1) And (a_ot.ToString.Length > 1)) Then
+                    'MessageBox.Show("condicion primarias ambas")
+                    If (kgconsumodisponiblexrolloacumulado <= a_req) Then
+                        ' MessageBox.Show("if2")
+                        kgreqci1rollo = kgconsumodisponiblexrolloacumulado
                     Else
-                        'MessageBox.Show(" 0 automatico")
-                        kgreqci1rollo = 0
+                        kgreqci1rollo = a_req
+                        'MessageBox.Show("else 1")
                     End If
-                    'MessageBox.Show("1.8.3")
-                    'messagebox.show("kg requeridos ci un rollo :" + cstr(kgreqci1rollo ))
-                    update_kgreqci1rollo(a_fac, kgreqci1rollo)
+                Else
+                    'MessageBox.Show(" 0 automatico")
+                    kgreqci1rollo = 0
+                End If
+                'MessageBox.Show("1.8.3")
+                'messagebox.show("kg requeridos ci un rollo :" + cstr(kgreqci1rollo ))
+                update_kgreqci1rollo(a_fac, kgreqci1rollo)
 
 
-                    'MessageBox.Show("1.9")
+                'MessageBox.Show("1.9")
 
-                    ''//----Kg de consumo disponible 2 AK
-                  
-                    'MessageBox.Show(" indi" + a_fac.ToString + "  F: " + a_kgconsumodisponiblexrollo.ToString + " h:" + kgdeconsumoasignadoantesCI.ToString + " J: " + kgreqci1rollo.ToString)
-                    Dim kgconsumodisponible2 As Double = a_kgconsumodisponiblexrollo - kgdeconsumoasignadoantesCI - kgreqci1rollo
-                    'messagebox.show("kg disponibles 2 :" + cstr(kgconsumodisponible2 ))
-                    update_kgconsumodsip2(a_fac, kgconsumodisponible2)
+                ''//----Kg de consumo disponible 2 AK
 
-                    'messagebox.show("kg disponibles 2 :" + cstr(kgconsumodisponible2 ))
-                    ''// kg  requeridos  rollo inicial-------------------------------------------------------am
-                    Dim kgrequerolloinicial As Double
+                'MessageBox.Show(" indi" + a_fac.ToString + "  F: " + a_kgconsumodisponiblexrollo.ToString + " h:" + kgdeconsumoasignadoantesCI.ToString + " J: " + kgreqci1rollo.ToString)
+                Dim kgconsumodisponible2 As Double = a_kgconsumodisponiblexrollo - kgdeconsumoasignadoantesCI - kgreqci1rollo
+                'messagebox.show("kg disponibles 2 :" + cstr(kgconsumodisponible2 ))
+                update_kgconsumodsip2(a_fac, kgconsumodisponible2)
 
-                    'MessageBox.Show("2")
+                'messagebox.show("kg disponibles 2 :" + cstr(kgconsumodisponible2 ))
+                ''// kg  requeridos  rollo inicial-------------------------------------------------------am
+                Dim kgrequerolloinicial As Double
 
-                    'messagebox.show( "rollos x ci :" + Cstr(reader2.Item("Number10")) + " consumos mismo rollo: "+ cstr(reader2.Item("Number13")))
+                'MessageBox.Show("2")
+
+                'messagebox.show( "rollos x ci :" + Cstr(reader2.Item("Number10")) + " consumos mismo rollo: "+ cstr(reader2.Item("Number13")))
 
 
-                    If ((CInt(reader2.Item(24)) > 1) And (CInt(reader2.Item(29)) = 1)) Then
-                        'messagebox.show("f1 ok")
-                        'messagebox.show( "cons disp 2:  :" + Cstr(kgconsumodisponible2) + " kg teoricos : "+ cstr(reader2.Item("Number01")))
-                        If (CInt(kgconsumodisponible2) <= CInt(reader2.Item(19))) Then
-                            'messagebox.show("f2 ok")	
-                            kgrequerolloinicial = CInt(kgconsumodisponible2)
-                        Else
-                            'messagebox.show("e2 ok")
-                            kgrequerolloinicial = CInt(reader2.Item(19))
-                        End If
+                If ((CInt(reader2.Item(24)) > 1) And (CInt(reader2.Item(29)) = 1)) Then
+                    'messagebox.show("f1 ok")
+                    'messagebox.show( "cons disp 2:  :" + Cstr(kgconsumodisponible2) + " kg teoricos : "+ cstr(reader2.Item("Number01")))
+                    If (CInt(kgconsumodisponible2) <= CInt(reader2.Item(19))) Then
+                        'messagebox.show("f2 ok")	
+                        kgrequerolloinicial = CInt(kgconsumodisponible2)
                     Else
-                        'messagebox.show("e1 ok")
-                        kgrequerolloinicial = 0
-
+                        'messagebox.show("e2 ok")
+                        kgrequerolloinicial = CInt(reader2.Item(19))
                     End If
-                    'messagebox.show("kg requeridos  rollo inicial :" + cstr(kgrequerolloinicial))
-                    update_kgreqrolloini(a_fac, kgrequerolloinicial)
-                   
-                    'MessageBox.Show("2.1")
-                    ''// Kg  consumo disponible  por  rollo 3 -----------------------------------------an
-                    Dim kgconsumodispxrollo As Double = kgconsumodisponible2 - kgrequerolloinicial
-                    ' MessageBox.Show("indice " + a_fac.ToString + " AK : " + kgconsumodisponible2.ToString + " AM " + kgrequerolloinicial.ToString + "kg consumo dispon x rollo  :" + CStr(kgconsumodispxrollo))
-                    update_kgconsdisrollo(a_fac, kgconsumodispxrollo)
+                Else
+                    'messagebox.show("e1 ok")
+                    kgrequerolloinicial = 0
+
+                End If
+                'messagebox.show("kg requeridos  rollo inicial :" + cstr(kgrequerolloinicial))
+                update_kgreqrolloini(a_fac, kgrequerolloinicial)
+
+                'MessageBox.Show("2.1")
+                ''// Kg  consumo disponible  por  rollo 3 -----------------------------------------an
+                Dim kgconsumodispxrollo As Double = kgconsumodisponible2 - kgrequerolloinicial
+                ' MessageBox.Show("indice " + a_fac.ToString + " AK : " + kgconsumodisponible2.ToString + " AM " + kgrequerolloinicial.ToString + "kg consumo dispon x rollo  :" + CStr(kgconsumodispxrollo))
+                update_kgconsdisrollo(a_fac, kgconsumodispxrollo)
 
 
 
@@ -3199,80 +3199,80 @@ Dim a_ot = reader2.Item(6)
 
 
 
-                    ''// kG  FALTANTES CI CALCULO COMPLEJO --------A0
-                    'MessageBox.Show(" ci: " + CStr(a_ci) + " emp: " + CStr(a_emp) + " parte13 :" + CStr(parte13) + " rollo" + CStr(rollo13))
-                    Dim ss1 As Double = get_ss1_factor(a_fac, a_ci, a_emp)
+                ''// kG  FALTANTES CI CALCULO COMPLEJO --------A0
+                'MessageBox.Show(" ci: " + CStr(a_ci) + " emp: " + CStr(a_emp) + " parte13 :" + CStr(parte13) + " rollo" + CStr(rollo13))
+                Dim ss1 As Double = get_ss1_factor(a_fac, a_ci, a_emp)
 
 
-                    Dim ss2 As Double = get_ss2_factor(a_fac, a_ci, a_emp, parte13, rollo13)
-                    'MessageBox.Show("kg teoricos:" + CStr(ax_req) + " kg requeridos Ci con 1 rollo : " + CStr(kgreqci1rollo) + "  kgrequeridos  rollo inicial:" + CStr(kgrequerolloinicial) + " ss1: " + CStr(ss1) + " ss2:" + CStr(ss2))
-                    
-
-                    'MessageBox.Show(" indice:  " + a_fac.ToString + "   AU - kg teoricos:" + CStr(ax_req) + " AG - kg requeridos Ci con 1 rollo : " + CStr(kgreqci1rollo) + "  AM - kgrequeridos  rollo inicial:" + CStr(kgrequerolloinicial) + " ss1: " + CStr(ss1) + " ss2:" + CStr(ss2))
-                    Dim kgfaltantesci As Double
+                Dim ss2 As Double = get_ss2_factor(a_fac, a_ci, a_emp, parte13, rollo13)
+                'MessageBox.Show("kg teoricos:" + CStr(ax_req) + " kg requeridos Ci con 1 rollo : " + CStr(kgreqci1rollo) + "  kgrequeridos  rollo inicial:" + CStr(kgrequerolloinicial) + " ss1: " + CStr(ss1) + " ss2:" + CStr(ss2))
 
 
-                    'MessageBox.Show(" indice :" + a_fac.ToString + "OT:" + a_ot.ToString + "  legnt: " + CStr(a_ot.ToString.Length))
+                'MessageBox.Show(" indice:  " + a_fac.ToString + "   AU - kg teoricos:" + CStr(ax_req) + " AG - kg requeridos Ci con 1 rollo : " + CStr(kgreqci1rollo) + "  AM - kgrequeridos  rollo inicial:" + CStr(kgrequerolloinicial) + " ss1: " + CStr(ss1) + " ss2:" + CStr(ss2))
+                Dim kgfaltantesci As Double
 
-                    If (a_ot.ToString.Length <= 1) Then
 
-                        kgfaltantesci = 0
+                'MessageBox.Show(" indice :" + a_fac.ToString + "OT:" + a_ot.ToString + "  legnt: " + CStr(a_ot.ToString.Length))
 
-                        'MessageBox.Show("ok o")
+                If (a_ot.ToString.Length <= 1) Then
+
+                    kgfaltantesci = 0
+
+                    'MessageBox.Show("ok o")
+                Else
+                    kgfaltantesci = ax_req - kgreqci1rollo - kgrequerolloinicial - (ss1 - ss2)
+                    'MessageBox.Show("ok  mayor")
+                End If
+
+                'MessageBox.Show("ss1:" + CStr(ss1) + " ss2: " + CStr(ss2))
+
+                ' MessageBox.Show(" kg faltantes ci:" + CStr(kgfaltantesci))
+                update_kgfaltantesci(a_fac, kgfaltantesci)
+
+
+                Dim kgreqydispxrollo As Double
+                If (kgfaltantesci > 0) Then
+                    If (kgfaltantesci <= kgconsumodispxrollo) Then
+                        kgreqydispxrollo = kgfaltantesci
                     Else
-                        kgfaltantesci = ax_req - kgreqci1rollo - kgrequerolloinicial - (ss1 - ss2)
-                        'MessageBox.Show("ok  mayor")
+                        kgreqydispxrollo = kgconsumodispxrollo
                     End If
+                Else
+                    kgreqydispxrollo = 0
 
-                    'MessageBox.Show("ss1:" + CStr(ss1) + " ss2: " + CStr(ss2))
-
-                    ' MessageBox.Show(" kg faltantes ci:" + CStr(kgfaltantesci))
-                    update_kgfaltantesci(a_fac, kgfaltantesci)
-
-                   
-                    Dim kgreqydispxrollo As Double
-                    If (kgfaltantesci > 0) Then
-                        If (kgfaltantesci <= kgconsumodispxrollo) Then
-                            kgreqydispxrollo = kgfaltantesci
-                        Else
-                            kgreqydispxrollo = kgconsumodispxrollo
-                        End If
-                    Else
-                        kgreqydispxrollo = 0
-
-                    End If
-                    'messagebox.show("kg  req  disponibles x rollo 3:" + cstr(kgreqydispxrollo))
-                    update_kgreqdispxrollo(a_fac, kgreqydispxrollo)
+                End If
+                'messagebox.show("kg  req  disponibles x rollo 3:" + cstr(kgreqydispxrollo))
+                update_kgreqdispxrollo(a_fac, kgreqydispxrollo)
 
 
-                    '' KG DE  CONSUMO DISPONIBLE  4 -------------AQ
-                    Dim kgconsdisp4 As Double = kgconsumodispxrollo - kgreqydispxrollo
-                    ' MessageBox.Show("indice " + a_fac.ToString + " AN:" + kgconsumodispxrollo.ToString + "  AP  " + kgreqydispxrollo.ToString)
-                    'MessageBox.Show("AQ kg  consumo disp 4 :" + CStr(kgconsdisp4))
-                    update_kgconsumodisponible4(a_fac, kgconsdisp4)
-                    'MessageBox.Show("AQ kg  consumo disp 4 :" + CStr(kgconsdisp4))
-
-
-                 
-                    '' KG DE CONSUMO FALTANTE  CI 4---------------AR
-                    Dim kgfaltaci4 As Double = kgfaltantesci - kgreqydispxrollo
-                    update_kgconsumofaltaci4(a_fac, kgfaltaci4)
-                    'messagebox.show("kg  faltantes  a ci 4 :" + cstr(kgfaltaci4))
+                '' KG DE  CONSUMO DISPONIBLE  4 -------------AQ
+                Dim kgconsdisp4 As Double = kgconsumodispxrollo - kgreqydispxrollo
+                ' MessageBox.Show("indice " + a_fac.ToString + " AN:" + kgconsumodispxrollo.ToString + "  AP  " + kgreqydispxrollo.ToString)
+                'MessageBox.Show("AQ kg  consumo disp 4 :" + CStr(kgconsdisp4))
+                update_kgconsumodisponible4(a_fac, kgconsdisp4)
+                'MessageBox.Show("AQ kg  consumo disp 4 :" + CStr(kgconsdisp4))
 
 
 
-                    '' KG  DE CONSUMO X CI 4 ---------------------------------------------------AS
-                    Dim kgconsumoxci4 As Double = kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo
-                    'MessageBox.Show("KGREQCI1ROLLO:" + CStr(kgreqci1rollo) + " kgreqrolloinici: " + CStr(kgrequerolloinicial) + " kgreqydispxrollo:" + CStr(kgreqydispxrollo))
-                    'MessageBox.Show("kg  consumo x ci 4 :" + CStr(kgconsumoxci4), " id  row:" + CStr(a_fac))
-
-                    update_kgconsumoxci4(a_fac, kgconsumoxci4)
+                '' KG DE CONSUMO FALTANTE  CI 4---------------AR
+                Dim kgfaltaci4 As Double = kgfaltantesci - kgreqydispxrollo
+                update_kgconsumofaltaci4(a_fac, kgfaltaci4)
+                'messagebox.show("kg  faltantes  a ci 4 :" + cstr(kgfaltaci4))
 
 
-                  
+
+                '' KG  DE CONSUMO X CI 4 ---------------------------------------------------AS
+                Dim kgconsumoxci4 As Double = kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo
+                'MessageBox.Show("KGREQCI1ROLLO:" + CStr(kgreqci1rollo) + " kgreqrolloinici: " + CStr(kgrequerolloinicial) + " kgreqydispxrollo:" + CStr(kgreqydispxrollo))
+                'MessageBox.Show("kg  consumo x ci 4 :" + CStr(kgconsumoxci4), " id  row:" + CStr(a_fac))
+
+                update_kgconsumoxci4(a_fac, kgconsumoxci4)
 
 
-                    ''________________________________________________________________________________________________
+
+
+
+                ''________________________________________________________________________________________________
 
 
 
@@ -3280,59 +3280,59 @@ Dim a_ot = reader2.Item(6)
 
 
 
-                    '' KG  DE CONSUMO DISPONIBLE  POR ROLLO DESPUES  TODAS  CI--------------AX
-                    ''=SI(AV6-AW6=0,AQ6,0)
+                '' KG  DE CONSUMO DISPONIBLE  POR ROLLO DESPUES  TODAS  CI--------------AX
+                ''=SI(AV6-AW6=0,AQ6,0)
 
 
 
-                    Dim kgconsumodespuestodasci As Double
+                Dim kgconsumodespuestodasci As Double
 
-                    'MessageBox.Show("indice" + a_fac.ToString + " AV: " + ciconsumopararollo.ToString + " AW: " + ciconsumoacumuladopararollo.ToString + " aq:" + kgconsdisp4.ToString)
-
-
-
-                    If ciconsumopararollo.Equals(DBNull.Value) Then
-
-                        ciconsumopararollo = 0
-
-                    End If
-                    If ((ciconsumopararollo - ciconsumoacumuladopararollo) = 0) Then
-                        kgconsumodespuestodasci = kgconsdisp4
-                        'MessageBox.Show(" si")
-                    Else
-                        kgconsumodespuestodasci = 0
-                        'MessageBox.Show(" no")
-                    End If
-                    update_kgconsumodespuestodasci(a_fac, kgconsumodespuestodasci)
-                    ' MessageBox.Show(" Ax kg  consumo depues todas  ci :" + CStr(kgconsumodespuestodasci))
+                'MessageBox.Show("indice" + a_fac.ToString + " AV: " + ciconsumopararollo.ToString + " AW: " + ciconsumoacumuladopararollo.ToString + " aq:" + kgconsdisp4.ToString)
 
 
 
+                If ciconsumopararollo.Equals(DBNull.Value) Then
 
+                    ciconsumopararollo = 0
 
-                    '' KG CONSUMO X CI 5 ---------------------------------------------------------------AY
-
-                    ''=AJ6+AM6+AP6+AX6
-
-                    ' MessageBox.Show("factores  AY:     AJ: " + CStr(ax_reqc1rollo) + " am:" + CStr(ax_reqrolloini) + "  ap:" + CStr(kgreqydispxrollo) + " ax:" + CStr(kgconsumodespuestodasci))
-                    Dim kgconsumoci5 As Double = kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo + kgconsumodespuestodasci
-
-                    'MessageBox.Show("AY kg  consumo ci 5:" + CStr(kgconsumoci5))
-
-                    update_kgconsumoci5(a_fac, kgconsumoci5)
+                End If
+                If ((ciconsumopararollo - ciconsumoacumuladopararollo) = 0) Then
+                    kgconsumodespuestodasci = kgconsdisp4
+                    'MessageBox.Show(" si")
+                Else
+                    kgconsumodespuestodasci = 0
+                    'MessageBox.Show(" no")
+                End If
+                update_kgconsumodespuestodasci(a_fac, kgconsumodespuestodasci)
+                ' MessageBox.Show(" Ax kg  consumo depues todas  ci :" + CStr(kgconsumodespuestodasci))
 
 
 
 
-                    ''****************************** consumo x ot (AZ) short char 11
-                    ''=AY6*Y6
 
-                    Dim kgconsumoxot As Double = kgconsumoci5 * porc_anchopapelusado
-                    'messagebox.show("kg consumo x ot :" + cstr(kgconsumoxot) + " inidice " + cstr(indice))
-                    ''// Asignar update shortchar 11 kg consumo ot
-                    update_kgconsot(a_fac, kgconsumoxot)
+                '' KG CONSUMO X CI 5 ---------------------------------------------------------------AY
 
-                   
+                ''=AJ6+AM6+AP6+AX6
+
+                ' MessageBox.Show("factores  AY:     AJ: " + CStr(ax_reqc1rollo) + " am:" + CStr(ax_reqrolloini) + "  ap:" + CStr(kgreqydispxrollo) + " ax:" + CStr(kgconsumodespuestodasci))
+                Dim kgconsumoci5 As Double = kgreqci1rollo + kgrequerolloinicial + kgreqydispxrollo + kgconsumodespuestodasci
+
+                'MessageBox.Show("AY kg  consumo ci 5:" + CStr(kgconsumoci5))
+
+                update_kgconsumoci5(a_fac, kgconsumoci5)
+
+
+
+
+                ''****************************** consumo x ot (AZ) short char 11
+                ''=AY6*Y6
+
+                Dim kgconsumoxot As Double = kgconsumoci5 * porc_anchopapelusado
+                'messagebox.show("kg consumo x ot :" + cstr(kgconsumoxot) + " inidice " + cstr(indice))
+                ''// Asignar update shortchar 11 kg consumo ot
+                update_kgconsot(a_fac, kgconsumoxot)
+
+
 
 
             End While ''// fin registros  tercer  ciclo
@@ -3475,7 +3475,7 @@ Dim a_ot = reader2.Item(6)
         Try
 
             Dim conn2 As OdbcConnection = New OdbcConnection()
-            conn2.ConnectionString = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=Epicor905;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+            conn2.ConnectionString = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.15;" + "DataBase=E10Cartomicro;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
             Dim mystring2 As String = "Delete from UD15"
             Dim cmd2 As OdbcCommand = New OdbcCommand(mystring2, conn2)
             conn2.Open()

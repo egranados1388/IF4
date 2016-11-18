@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class consumos
 
-    Private MiConexion As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
+    Private MiConexion As New SqlConnection("Data Source=172.16.1.15;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
     Private MiDataSet As New DataSet()
     Private MiEnlazador As New BindingSource
     Dim MiAdaptador2
@@ -10,7 +10,7 @@ Public Class consumos
 
 
 
- 'BindingSource  
+    'BindingSource  
     Private WithEvents bs As New BindingSource
     ' Adaptador de datos sql  
     Private SqlDataAdapter As SqlDataAdapter

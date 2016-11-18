@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("IF4 1.0.0")> 
+<Assembly: AssemblyTitle("IF4 1.1")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("IF4 1.0.0")> 
-<Assembly: AssemblyCopyright("©  2014")> 
+<Assembly: AssemblyProduct("IF4 1.1")> 
+<Assembly: AssemblyCopyright("©  2016")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

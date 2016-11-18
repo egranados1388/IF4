@@ -1,15 +1,15 @@
 Imports System.Data.Odbc ''//Libreria metodos para conexion odbc
 Imports System.Data.SqlClient
 Public Class plantilla
-Shared cs As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
+    Shared cs As String = "Driver={SQL Server Native Client 10.0};" + "Server=172.16.1.11;" + "DataBase=IF4;" + "Trusted_Connection=no;" + "Uid=epicon;" + "Pwd=cart0-7364*;"
 
 
- Private Const csd As String = "Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
+    Private Const csd As String = "Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
 
 
-Private SqlDataAdapter As SqlDataAdapter
+    Private SqlDataAdapter As SqlDataAdapter
     ' Cadena de conexión  
-   ' Private Const cs As String = "Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
+    ' Private Const cs As String = "Data Source=172.16.1.15;Initial Catalog=IF4;User id=epicon;password=cart0-7364*"
     ' flag  
     Private bEdit As Boolean
 Private WithEvents bs As New BindingSource

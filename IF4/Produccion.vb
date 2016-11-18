@@ -2,14 +2,14 @@
 Imports System.Data.SqlClient
 Public Class produccion
 
-   ' Private MiConexion As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
+    ' Private MiConexion As New SqlConnection("Data Source=172.16.1.15;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
     'Private MiAdaptador As New SqlDataAdapter("Select * From Produccion Order by fecha_final_prod", MiConexion)
     'Private MiDataSet As New DataSet()
     'Private MiEnlazador As New BindingSource
 
 
 
- 'BindingSource  
+    'BindingSource  
     Private WithEvents bs As New BindingSource
     ' Adaptador de datos sql  
     Private SqlDataAdapter As SqlDataAdapter

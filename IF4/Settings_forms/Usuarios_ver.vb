@@ -3,7 +3,7 @@ Public Class Usuarios_ver
 
 
 
-Private MiConexion As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
+    Private MiConexion As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=IF4;User id=epicon;password=cart0-7364*")
 Private MiEnlazador As New BindingSource
  Dim MiAdaptador2
 

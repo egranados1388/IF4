@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>IF4_1._0._0.My.MyApplication</StartupObject>
     <RootNamespace>IF4_1._0._0</RootNamespace>
-    <AssemblyName>Ejecutable IF4 1.0.1</AssemblyName>
+    <AssemblyName>Ejecutable IF4 1.1</AssemblyName>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileUpgradeFlags>

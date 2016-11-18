@@ -42,7 +42,7 @@ Public Class log
                 ger = reader2.GetInt32(2)
             End While
 
-           
+
 
             If conta = 1 Then
 

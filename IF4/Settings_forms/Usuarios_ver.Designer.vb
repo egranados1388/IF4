@@ -26,17 +26,17 @@ Me.PasswdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBo
 Me.JerarquiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
 Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 Me.DSConjuntoTablasIF4 = New IF4_1._0._0.DSConjuntoTablasIF4
-Me.DataSEpicor905 = New IF4_1._0._0.DataSEpicor905
-Me.DataSEpicor905BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+Me.DataSE10Cartomicro = New IF4_1._0._0.DataSE10Cartomicro
+Me.DataSE10CartomicroBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 Me.JobOperBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-Me.JobOperTableAdapter = New IF4_1._0._0.DataSEpicor905TableAdapters.JobOperTableAdapter
+Me.JobOperTableAdapter = New IF4_1._0._0.DataSE10CartomicroTableAdapters.JobOperTableAdapter
 Me.UsuariosTableAdapter = New IF4_1._0._0.DSConjuntoTablasIF4TableAdapters.usuariosTableAdapter
 Me.Button1 = New System.Windows.Forms.Button
 CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 CType(Me.DSConjuntoTablasIF4, System.ComponentModel.ISupportInitialize).BeginInit()
-CType(Me.DataSEpicor905, System.ComponentModel.ISupportInitialize).BeginInit()
-CType(Me.DataSEpicor905BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+CType(Me.DataSE10Cartomicro, System.ComponentModel.ISupportInitialize).BeginInit()
+CType(Me.DataSE10CartomicroBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 CType(Me.JobOperBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 Me.SuspendLayout()
 '
@@ -79,20 +79,20 @@ Me.UsuariosBindingSource.DataSource = Me.DSConjuntoTablasIF4
 Me.DSConjuntoTablasIF4.DataSetName = "DSConjuntoTablasIF4"
 Me.DSConjuntoTablasIF4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 '
-'DataSEpicor905
+'DataSE10Cartomicro
 '
-Me.DataSEpicor905.DataSetName = "DataSEpicor905"
-Me.DataSEpicor905.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+Me.DataSE10Cartomicro.DataSetName = "DataSE10Cartomicro"
+Me.DataSE10Cartomicro.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 '
-'DataSEpicor905BindingSource
+'DataSE10CartomicroBindingSource
 '
-Me.DataSEpicor905BindingSource.DataSource = Me.DataSEpicor905
-Me.DataSEpicor905BindingSource.Position = 0
+Me.DataSE10CartomicroBindingSource.DataSource = Me.DataSE10Cartomicro
+Me.DataSE10CartomicroBindingSource.Position = 0
 '
 'JobOperBindingSource
 '
 Me.JobOperBindingSource.DataMember = "JobOper"
-Me.JobOperBindingSource.DataSource = Me.DataSEpicor905BindingSource
+Me.JobOperBindingSource.DataSource = Me.DataSE10CartomicroBindingSource
 '
 'JobOperTableAdapter
 '
@@ -123,17 +123,17 @@ Me.Text = "Usuarios  Registrados"
 CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 CType(Me.DSConjuntoTablasIF4, System.ComponentModel.ISupportInitialize).EndInit()
-CType(Me.DataSEpicor905, System.ComponentModel.ISupportInitialize).EndInit()
-CType(Me.DataSEpicor905BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+CType(Me.DataSE10Cartomicro, System.ComponentModel.ISupportInitialize).EndInit()
+CType(Me.DataSE10CartomicroBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 CType(Me.JobOperBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 Me.ResumeLayout(False)
 
 End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataSEpicor905BindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents DataSEpicor905 As IF4_1._0._0.DataSEpicor905
+    Friend WithEvents DataSE10CartomicroBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DataSE10Cartomicro As IF4_1._0._0.DataSE10Cartomicro
     Friend WithEvents JobOperBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents JobOperTableAdapter As IF4_1._0._0.DataSEpicor905TableAdapters.JobOperTableAdapter
+    Friend WithEvents JobOperTableAdapter As IF4_1._0._0.DataSE10CartomicroTableAdapters.JobOperTableAdapter
     Friend WithEvents DSConjuntoTablasIF4 As IF4_1._0._0.DSConjuntoTablasIF4
     Friend WithEvents UsuariosBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UsuariosTableAdapter As IF4_1._0._0.DSConjuntoTablasIF4TableAdapters.usuariosTableAdapter

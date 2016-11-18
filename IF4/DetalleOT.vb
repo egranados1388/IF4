@@ -4,14 +4,14 @@ Public Class DetalleOT
 
 
     ''// grid pedido
-    Private MiConexion As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=Epicor905;User id=epicon;password=cart0-7364*")
+    Private MiConexion As New SqlConnection("Data Source=172.16.1.15;Initial Catalog=E10Cartomicro;User id=epicon;password=cart0-7364*")
     Private MiAdaptador As New SqlDataAdapter("Select JobNum as IDPedido_OT , MtlSeq  as Secuencia, PartNum as Parte , Description as Descripcion  From JobMtl where JobNum='" + CStr(Ingreso_consumos.ot_txt.Text) + "' and  Mtlseq  in (110,120,130,140,150) ", MiConexion)
     Private MiDataSet As New DataSet()
     Private MiEnlazador As New BindingSource
 
 
     ''// grid  lote 
-    Private MiConexion2 As New SqlConnection("Data Source=172.16.1.11;Initial Catalog=Epicor905;User id=epicon;password=cart0-7364*")
+    Private MiConexion2 As New SqlConnection("Data Source=172.16.1.15;Initial Catalog=E10Cartomicro;User id=epicon;password=cart0-7364*")
     Private MiAdaptador2 As New SqlDataAdapter("select PartNum as Parte, LotNum as IDRollo ,  OnHand as En_existencia , FirstRefDate as Primera_Ref  from PartLot where   LotNum = '" + CStr(Ingreso_consumos.rollo_txt.Text) + "'", MiConexion2)
     Private MiDataSet2 As New DataSet()
     Private MiEnlazador2 As New BindingSource
@@ -19,14 +19,14 @@ Public Class DetalleOT
 
 
     ''//grid  inventario
-    
+
 
     'BindingSource  
     Private WithEvents bs As New BindingSource
     ' Adaptador de datos sql  
     Private SqlDataAdapter As SqlDataAdapter
     ' Cadena de conexión  
-    Private Const cs As String = "Data Source=172.16.1.11;Initial Catalog=Epicor905;User id=epicon;password=cart0-7364*"
+    Private Const cs As String = "Data Source=172.16.1.15;Initial Catalog=E10Cartomicro;User id=epicon;password=cart0-7364*"
     ' flag  
     Private bEdit As Boolean
 

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="resume_t_DS" targetNamespace="http://tempuri.org/resume_t_DS.xsd" xmlns:mstns="http://tempuri.org/resume_t_DS.xsd" xmlns="http://tempuri.org/resume_t_DS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionStringIF4" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="ConnectionStringIF4 (MySettings)" PropertyReference="ApplicationSettings.IF4_1._0._0.My.MySettings.GlobalReference.Default.ConnectionStringIF4" Provider="System.Data.OleDb">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="resumen_tTableAdapter" GeneratorDataComponentClassName="resumen_tTableAdapter" Name="resumen_t" UserDataComponentName="resumen_tTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringIF4 (MySettings)" DbObjectName="IF4.dbo.resumen_t" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="True" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT "indice", "ci", "empalmador", "rollo", "feche_consumo", "tipo_papel_coincide", "ancho_papel_coincide", "Consecutivo_aparicion", "Correccion_kg_negativos", "capturasduplicadas", "cicapturaduplicada", "kginicialescuentacum", "entradas_salidas", "tienekgsalida", "ent_sal_kgsalida", "respuesta", "cisinerror", "faltaderollo", "rolloescaneadoynousado", "parte_lote", "ultimokgsalida", "diferenci_ent_sal", "kginicialescuenta", "kgfinalescuenta", "diferenciaenultimokgsalidaafecta", "ci_dif_ent_sal", "ultimo_emp_re", "cambio_empal_sinval", "ci_error_", "kginicialesduplic", "ci_error2" FROM "dbo"."resumen_t"</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="indice" DataSetColumn="indice" />
+              <Mapping SourceColumn="ci" DataSetColumn="ci" />
+              <Mapping SourceColumn="empalmador" DataSetColumn="empalmador" />
+              <Mapping SourceColumn="rollo" DataSetColumn="rollo" />
+              <Mapping SourceColumn="feche_consumo" DataSetColumn="feche_consumo" />
+              <Mapping SourceColumn="tipo_papel_coincide" DataSetColumn="tipo_papel_coincide" />
+              <Mapping SourceColumn="ancho_papel_coincide" DataSetColumn="ancho_papel_coincide" />
+              <Mapping SourceColumn="Consecutivo_aparicion" DataSetColumn="Consecutivo_aparicion" />
+              <Mapping SourceColumn="Correccion_kg_negativos" DataSetColumn="Correccion_kg_negativos" />
+              <Mapping SourceColumn="capturasduplicadas" DataSetColumn="capturasduplicadas" />
+              <Mapping SourceColumn="cicapturaduplicada" DataSetColumn="cicapturaduplicada" />
+              <Mapping SourceColumn="kginicialescuentacum" DataSetColumn="kginicialescuentacum" />
+              <Mapping SourceColumn="entradas_salidas" DataSetColumn="entradas_salidas" />
+              <Mapping SourceColumn="tienekgsalida" DataSetColumn="tienekgsalida" />
+              <Mapping SourceColumn="ent_sal_kgsalida" DataSetColumn="ent_sal_kgsalida" />
+              <Mapping SourceColumn="respuesta" DataSetColumn="respuesta" />
+              <Mapping SourceColumn="cisinerror" DataSetColumn="cisinerror" />
+              <Mapping SourceColumn="faltaderollo" DataSetColumn="faltaderollo" />
+              <Mapping SourceColumn="rolloescaneadoynousado" DataSetColumn="rolloescaneadoynousado" />
+              <Mapping SourceColumn="parte_lote" DataSetColumn="parte_lote" />
+              <Mapping SourceColumn="ultimokgsalida" DataSetColumn="ultimokgsalida" />
+              <Mapping SourceColumn="diferenci_ent_sal" DataSetColumn="diferenci_ent_sal" />
+              <Mapping SourceColumn="kginicialescuenta" DataSetColumn="kginicialescuenta" />
+              <Mapping SourceColumn="kgfinalescuenta" DataSetColumn="kgfinalescuenta" />
+              <Mapping SourceColumn="diferenciaenultimokgsalidaafecta" DataSetColumn="diferenciaenultimokgsalidaafecta" />
+              <Mapping SourceColumn="ci_dif_ent_sal" DataSetColumn="ci_dif_ent_sal" />
+              <Mapping SourceColumn="ultimo_emp_re" DataSetColumn="ultimo_emp_re" />
+              <Mapping SourceColumn="cambio_empal_sinval" DataSetColumn="cambio_empal_sinval" />
+              <Mapping SourceColumn="ci_error_" DataSetColumn="ci_error_" />
+              <Mapping SourceColumn="kginicialesduplic" DataSetColumn="kginicialesduplic" />
+              <Mapping SourceColumn="ci_error2" DataSetColumn="ci_error2" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="resume_t_DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="resume_t_DS" msprop:Generator_DataSetName="resume_t_DS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="resumen_t" msprop:Generator_UserTableName="resumen_t" msprop:Generator_RowDeletedName="resumen_tRowDeleted" msprop:Generator_TableClassName="resumen_tDataTable" msprop:Generator_RowChangedName="resumen_tRowChanged" msprop:Generator_RowClassName="resumen_tRow" msprop:Generator_RowChangingName="resumen_tRowChanging" msprop:Generator_RowEvArgName="resumen_tRowChangeEvent" msprop:Generator_RowEvHandlerName="resumen_tRowChangeEventHandler" msprop:Generator_TablePropName="resumen_t" msprop:Generator_TableVarName="tableresumen_t" msprop:Generator_RowDeletingName="resumen_tRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="indice" msprop:Generator_UserColumnName="indice" msprop:Generator_ColumnPropNameInRow="indice" msprop:Generator_ColumnVarNameInTable="columnindice" msprop:Generator_ColumnPropNameInTable="indiceColumn" type="xs:int" />
+              <xs:element name="ci" msprop:Generator_UserColumnName="ci" msprop:Generator_ColumnPropNameInRow="ci" msprop:Generator_ColumnVarNameInTable="columnci" msprop:Generator_ColumnPropNameInTable="ciColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="empalmador" msprop:Generator_UserColumnName="empalmador" msprop:Generator_ColumnPropNameInRow="empalmador" msprop:Generator_ColumnVarNameInTable="columnempalmador" msprop:Generator_ColumnPropNameInTable="empalmadorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rollo" msprop:Generator_UserColumnName="rollo" msprop:Generator_ColumnPropNameInRow="rollo" msprop:Generator_ColumnVarNameInTable="columnrollo" msprop:Generator_ColumnPropNameInTable="rolloColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feche_consumo" msprop:Generator_UserColumnName="feche_consumo" msprop:Generator_ColumnPropNameInRow="feche_consumo" msprop:Generator_ColumnVarNameInTable="columnfeche_consumo" msprop:Generator_ColumnPropNameInTable="feche_consumoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_papel_coincide" msprop:Generator_UserColumnName="tipo_papel_coincide" msprop:Generator_ColumnPropNameInRow="tipo_papel_coincide" msprop:Generator_ColumnVarNameInTable="columntipo_papel_coincide" msprop:Generator_ColumnPropNameInTable="tipo_papel_coincideColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ancho_papel_coincide" msprop:Generator_UserColumnName="ancho_papel_coincide" msprop:Generator_ColumnPropNameInRow="ancho_papel_coincide" msprop:Generator_ColumnVarNameInTable="columnancho_papel_coincide" msprop:Generator_ColumnPropNameInTable="ancho_papel_coincideColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Consecutivo_aparicion" msprop:Generator_UserColumnName="Consecutivo_aparicion" msprop:Generator_ColumnPropNameInRow="Consecutivo_aparicion" msprop:Generator_ColumnVarNameInTable="columnConsecutivo_aparicion" msprop:Generator_ColumnPropNameInTable="Consecutivo_aparicionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Correccion_kg_negativos" msprop:Generator_UserColumnName="Correccion_kg_negativos" msprop:Generator_ColumnPropNameInRow="Correccion_kg_negativos" msprop:Generator_ColumnVarNameInTable="columnCorreccion_kg_negativos" msprop:Generator_ColumnPropNameInTable="Correccion_kg_negativosColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="capturasduplicadas" msprop:Generator_UserColumnName="capturasduplicadas" msprop:Generator_ColumnPropNameInRow="capturasduplicadas" msprop:Generator_ColumnVarNameInTable="columncapturasduplicadas" msprop:Generator_ColumnPropNameInTable="capturasduplicadasColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cicapturaduplicada" msprop:Generator_UserColumnName="cicapturaduplicada" msprop:Generator_ColumnPropNameInRow="cicapturaduplicada" msprop:Generator_ColumnVarNameInTable="columncicapturaduplicada" msprop:Generator_ColumnPropNameInTable="cicapturaduplicadaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kginicialescuentacum" msprop:Generator_UserColumnName="kginicialescuentacum" msprop:Generator_ColumnPropNameInRow="kginicialescuentacum" msprop:Generator_ColumnVarNameInTable="columnkginicialescuentacum" msprop:Generator_ColumnPropNameInTable="kginicialescuentacumColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="entradas_salidas" msprop:Generator_UserColumnName="entradas_salidas" msprop:Generator_ColumnPropNameInRow="entradas_salidas" msprop:Generator_ColumnVarNameInTable="columnentradas_salidas" msprop:Generator_ColumnPropNameInTable="entradas_salidasColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tienekgsalida" msprop:Generator_UserColumnName="tienekgsalida" msprop:Generator_ColumnPropNameInRow="tienekgsalida" msprop:Generator_ColumnVarNameInTable="columntienekgsalida" msprop:Generator_ColumnPropNameInTable="tienekgsalidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ent_sal_kgsalida" msprop:Generator_UserColumnName="ent_sal_kgsalida" msprop:Generator_ColumnPropNameInRow="ent_sal_kgsalida" msprop:Generator_ColumnVarNameInTable="columnent_sal_kgsalida" msprop:Generator_ColumnPropNameInTable="ent_sal_kgsalidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="respuesta" msprop:Generator_UserColumnName="respuesta" msprop:Generator_ColumnPropNameInRow="respuesta" msprop:Generator_ColumnVarNameInTable="columnrespuesta" msprop:Generator_ColumnPropNameInTable="respuestaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cisinerror" msprop:Generator_UserColumnName="cisinerror" msprop:Generator_ColumnPropNameInRow="cisinerror" msprop:Generator_ColumnVarNameInTable="columncisinerror" msprop:Generator_ColumnPropNameInTable="cisinerrorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="faltaderollo" msprop:Generator_UserColumnName="faltaderollo" msprop:Generator_ColumnPropNameInRow="faltaderollo" msprop:Generator_ColumnVarNameInTable="columnfaltaderollo" msprop:Generator_ColumnPropNameInTable="faltaderolloColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="rolloescaneadoynousado" msprop:Generator_UserColumnName="rolloescaneadoynousado" msprop:Generator_ColumnPropNameInRow="rolloescaneadoynousado" msprop:Generator_ColumnVarNameInTable="columnrolloescaneadoynousado" msprop:Generator_ColumnPropNameInTable="rolloescaneadoynousadoColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="parte_lote" msprop:Generator_UserColumnName="parte_lote" msprop:Generator_ColumnPropNameInRow="parte_lote" msprop:Generator_ColumnVarNameInTable="columnparte_lote" msprop:Generator_ColumnPropNameInTable="parte_loteColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ultimokgsalida" msprop:Generator_UserColumnName="ultimokgsalida" msprop:Generator_ColumnPropNameInRow="ultimokgsalida" msprop:Generator_ColumnVarNameInTable="columnultimokgsalida" msprop:Generator_ColumnPropNameInTable="ultimokgsalidaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="diferenci_ent_sal" msprop:Generator_UserColumnName="diferenci_ent_sal" msprop:Generator_ColumnPropNameInRow="diferenci_ent_sal" msprop:Generator_ColumnVarNameInTable="columndiferenci_ent_sal" msprop:Generator_ColumnPropNameInTable="diferenci_ent_salColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kginicialescuenta" msprop:Generator_UserColumnName="kginicialescuenta" msprop:Generator_ColumnPropNameInRow="kginicialescuenta" msprop:Generator_ColumnVarNameInTable="columnkginicialescuenta" msprop:Generator_ColumnPropNameInTable="kginicialescuentaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kgfinalescuenta" msprop:Generator_UserColumnName="kgfinalescuenta" msprop:Generator_ColumnPropNameInRow="kgfinalescuenta" msprop:Generator_ColumnVarNameInTable="columnkgfinalescuenta" msprop:Generator_ColumnPropNameInTable="kgfinalescuentaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="diferenciaenultimokgsalidaafecta" msprop:Generator_UserColumnName="diferenciaenultimokgsalidaafecta" msprop:Generator_ColumnPropNameInRow="diferenciaenultimokgsalidaafecta" msprop:Generator_ColumnVarNameInTable="columndiferenciaenultimokgsalidaafecta" msprop:Generator_ColumnPropNameInTable="diferenciaenultimokgsalidaafectaColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ci_dif_ent_sal" msprop:Generator_UserColumnName="ci_dif_ent_sal" msprop:Generator_ColumnPropNameInRow="ci_dif_ent_sal" msprop:Generator_ColumnVarNameInTable="columnci_dif_ent_sal" msprop:Generator_ColumnPropNameInTable="ci_dif_ent_salColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ultimo_emp_re" msprop:Generator_UserColumnName="ultimo_emp_re" msprop:Generator_ColumnPropNameInRow="ultimo_emp_re" msprop:Generator_ColumnVarNameInTable="columnultimo_emp_re" msprop:Generator_ColumnPropNameInTable="ultimo_emp_reColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cambio_empal_sinval" msprop:Generator_UserColumnName="cambio_empal_sinval" msprop:Generator_ColumnPropNameInRow="cambio_empal_sinval" msprop:Generator_ColumnVarNameInTable="columncambio_empal_sinval" msprop:Generator_ColumnPropNameInTable="cambio_empal_sinvalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ci_error_" msprop:Generator_UserColumnName="ci_error_" msprop:Generator_ColumnPropNameInRow="ci_error_" msprop:Generator_ColumnVarNameInTable="columnci_error_" msprop:Generator_ColumnPropNameInTable="ci_error_Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kginicialesduplic" msprop:Generator_UserColumnName="kginicialesduplic" msprop:Generator_ColumnPropNameInRow="kginicialesduplic" msprop:Generator_ColumnVarNameInTable="columnkginicialesduplic" msprop:Generator_ColumnPropNameInTable="kginicialesduplicColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ci_error2" msprop:Generator_UserColumnName="ci_error2" msprop:Generator_ColumnPropNameInRow="ci_error2" msprop:Generator_ColumnVarNameInTable="columnci_error2" msprop:Generator_ColumnPropNameInTable="ci_error2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:resumen_t" />
+      <xs:field xpath="mstns:indice" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

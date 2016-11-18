@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAA81131-EB98-45C5-BD25-7C9268AAB2FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>IF4_1._0._0.My.MyApplication</StartupObject>
+    <RootNamespace>IF4_1._0._0</RootNamespace>
+    <AssemblyName>Ejecutable IF4 1.0.0</AssemblyName>
+    <MyType>WindowsForms</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>IF4_1._0._0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>IF4_1._0._0.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=12.0.1100.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=12.0.1100.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bitacora.Designer.vb">
+      <DependentUpon>bitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos_teorico.vb">
+    </Compile>
+    <Compile Include="consumos.Designer.vb">
+      <DependentUpon>consumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="consumos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carga_produccion.Designer.vb">
+      <DependentUpon>Carga_produccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carga_produccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consumos_update.Designer.vb">
+      <DependentUpon>consumos_update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="consumos_update.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos_real.vb" />
+    <Compile Include="Carga_consumos.Designer.vb">
+      <DependentUpon>Carga_consumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Carga_consumos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion_2.Designer.vb">
+      <DependentUpon>Produccion_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\plantilla_r.Designer.vb">
+      <DependentUpon>plantilla_r.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\plantilla_r.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\resumen_1cr.Designer.vb">
+      <DependentUpon>resumen_1cr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\resumen_1cr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\resumen_cr.Designer.vb">
+      <DependentUpon>resumen_cr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\resumen_cr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\vista_evaluacion_real.Designer.vb">
+      <DependentUpon>vista_evaluacion_real.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\vista_evaluacion_real.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\index_ayudas_cr.Designer.vb">
+      <DependentUpon>index_ayudas_cr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\index_ayudas_cr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resumen_metods_reaL.vb" />
+    <Compile Include="Evaluar_r.Designer.vb">
+      <DependentUpon>Evaluar_r.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluar_r.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSchart.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSchart.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluar.Designer.vb">
+      <DependentUpon>Evaluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSetConsumos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConsumos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetConsumos.vb">
+      <DependentUpon>DataSetConsumos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSConjuntoTablasIF4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSConjuntoTablasIF4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSConjuntoTablasIF4.vb">
+      <DependentUpon>DSConjuntoTablasIF4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="fechas_cprograma_frm.Designer.vb">
+      <DependentUpon>fechas_cprograma_frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="fechas_cprograma_frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmdeliverDate.vb" />
+    <Compile Include="log.Designer.vb">
+      <DependentUpon>log.vb</DependentUpon>
+    </Compile>
+    <Compile Include="log.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion.Designer.vb">
+      <DependentUpon>Produccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\semaf2.Designer.vb">
+      <DependentUpon>semaf2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\semaf2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\general.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>general.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\General_frm.Designer.vb">
+      <DependentUpon>General_frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\General_frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\index_ayudas_ct.Designer.vb">
+      <DependentUpon>index_ayudas_ct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\index_ayudas_ct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\plantilla.Designer.vb">
+      <DependentUpon>plantilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\plantilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\resumen_ct.Designer.vb">
+      <DependentUpon>resumen_ct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\resumen_ct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\semaf.Designer.vb">
+      <DependentUpon>semaf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\semaf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\vista_evaluacion_teorica.Designer.vb">
+      <DependentUpon>vista_evaluacion_teorica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\vista_evaluacion_teorica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resumen_metods.vb">
+    </Compile>
+    <Compile Include="resume_t_DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>resume_t_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="salida_rollo.Designer.vb">
+      <DependentUpon>salida_rollo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="salida_rollo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleOT.Designer.vb">
+      <DependentUpon>DetalleOT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleOT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSEpicor905.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSEpicor905.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Filtro.Designer.vb">
+      <DependentUpon>Filtro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Filtro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index.Designer.vb">
+      <DependentUpon>Index.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Index.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingreso_consumos.Designer.vb">
+      <DependentUpon>Ingreso_consumos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ingreso_consumos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="metodos.vb" />
+    <Compile Include="programas.Designer.vb">
+      <DependentUpon>programas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="programas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carga_programa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carga_programa.Designer.vb">
+      <DependentUpon>Carga_programa.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="Settings_forms\Usuarios_ver.Designer.vb">
+      <DependentUpon>Usuarios_ver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings_forms\Usuarios_ver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settings_menu.Designer.vb">
+      <DependentUpon>settings_menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="settings_menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bitacora.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>bitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consumos.resx">
+      <DependentUpon>consumos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carga_produccion.resx">
+      <DependentUpon>Carga_produccion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consumos_update.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>consumos_update.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carga_consumos.resx">
+      <DependentUpon>Carga_consumos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion_2.resx">
+      <DependentUpon>Produccion_2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluar_r.resx">
+      <DependentUpon>Evaluar_r.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluar.resx">
+      <DependentUpon>Evaluar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fechas_cprograma_frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>fechas_cprograma_frm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="log.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>log.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Produccion.resx">
+      <DependentUpon>Produccion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\plantilla_r.resx">
+      <DependentUpon>plantilla_r.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\resumen_1cr.resx">
+      <DependentUpon>resumen_1cr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\resumen_cr.resx">
+      <DependentUpon>resumen_cr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\vista_evaluacion_real.resx">
+      <DependentUpon>vista_evaluacion_real.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\index_ayudas_cr.resx">
+      <DependentUpon>index_ayudas_cr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\semaf2.resx">
+      <DependentUpon>semaf2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\general.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>general.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\General_frm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>General_frm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\index_ayudas_ct.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>index_ayudas_ct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\plantilla.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>plantilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\resumen_ct.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>resumen_ct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\semaf.resx">
+      <DependentUpon>semaf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\vista_evaluacion_teorica.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>vista_evaluacion_teorica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salida_rollo.resx">
+      <DependentUpon>salida_rollo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleOT.resx">
+      <DependentUpon>DetalleOT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtro.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Filtro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Index.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingreso_consumos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Ingreso_consumos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="programas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>programas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carga_programa.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Carga_programa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings_forms\Usuarios_ver.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Usuarios_ver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings_menu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>settings_menu.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSEpicor905.xsc">
+      <DependentUpon>DataSEpicor905.xsd</DependentUpon>
+    </None>
+    <None Include="DataSEpicor905.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSEpicor905.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSEpicor905.xss">
+      <DependentUpon>DataSEpicor905.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSetConsumos.xsc">
+      <DependentUpon>DataSetConsumos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetConsumos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConsumos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetConsumos.xss">
+      <DependentUpon>DataSetConsumos.xsd</DependentUpon>
+    </None>
+    <None Include="DSConjuntoTablasIF4.xsc">
+      <DependentUpon>DSConjuntoTablasIF4.xsd</DependentUpon>
+    </None>
+    <None Include="DSConjuntoTablasIF4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSConjuntoTablasIF4.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSConjuntoTablasIF4.xss">
+      <DependentUpon>DSConjuntoTablasIF4.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\logocarto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DSchart.xsc">
+      <DependentUpon>DSchart.xsd</DependentUpon>
+    </None>
+    <None Include="DSchart.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSchart.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DSchart.xss">
+      <DependentUpon>DSchart.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\sett.jpg" />
+    <None Include="resume_t_DS.xsc">
+      <DependentUpon>resume_t_DS.xsd</DependentUpon>
+    </None>
+    <None Include="resume_t_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>resume_t_DS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resume_t_DS.xss">
+      <DependentUpon>resume_t_DS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
